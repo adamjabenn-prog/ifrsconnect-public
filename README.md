@@ -1,57 +1,49 @@
-# IFRS Connect — IFRS 16 Lease Accounting Calculator
+# IFRS Connect - IFRS 16 Lease Accounting Calculator
 
-A cloud-based [IFRS 16 calculator](https://ifrsconnect.com/ifrs16calculator) 
-for finance teams and accountants who need accurate, audit-ready lease 
-accounting schedules without building and maintaining complex spreadsheets.
+[IFRS Connect](https://ifrsconnect.com/ifrs16calculator) is a cloud-based IFRS 16 calculator for finance teams, accountants and auditors who need lease liability schedules, right-of-use asset schedules, depreciation, interest and journal outputs without maintaining complex spreadsheets.
 
-## What it does
+This public repository documents the product surface for IFRS Connect. The proprietary calculation engine and application source code are kept private.
 
-IFRS Connect calculates the full IFRS 16 / AASB 16 lease accounting output 
-from a single set of inputs:
+## Try the IFRS 16 calculator
 
-- Lease liability schedule (opening balance, interest, payments, closing balance)
-- Right-of-use asset and depreciation schedule
-- Journal entries by period
-- CPI / indexation remeasurement
-- Lease modifications and term extensions
-- Rent-free periods and lease incentives
-- Initial direct costs and restoration provisions
-- Audit-ready Excel export (Pro)
+Use the live [IFRS 16 calculator](https://ifrsconnect.com/ifrs16calculator) to enter lease details and generate supported IFRS 16 / AASB 16 lessee outputs. The calculator is free to start with no sign-up required. Excel export and full working-paper outputs are available on Pro plans.
 
-## How the calculations work
+## What it calculates
 
-The engine applies deterministic logic — the same formulas, in the same order, 
-every time. No hidden overrides, no circular references, no formula drift across 
-periods.
+For supported workflows, IFRS Connect generates:
 
-Full methodology is documented here:  
-→ [IFRS 16 calculation methodology](https://ifrsconnect.com/methodology)
+- Lease liability schedule with opening balance, interest, payments and closing balance
+- Right-of-use asset schedule and depreciation by period
+- Journal entries for lease liability, interest, payments and depreciation
+- CPI / indexation remeasurement outputs
+- Scoped lease modification and term-extension workflows
+- Rent-free period, lease incentive, initial direct cost and restoration provision inputs
+- Audit-ready Excel export on supported plans
 
-## Learn IFRS 16
+## Calculation methodology
 
-If you're working through the standard for the first time or need a reference 
-for how lease liability, ROU asset, depreciation and journal entries connect:  
-→ [How IFRS 16 lease calculations work — step-by-step guide](https://ifrsconnect.com/ifrs-16-calculator)
+The calculator is designed around deterministic, reconciliation-focused logic so the same supported inputs are processed consistently. The public methodology explains the calculation approach, supported workflow limits and review controls:
 
-## Try it free
+- [IFRS 16 calculation methodology](https://ifrsconnect.com/methodology)
+- [IFRS 16 calculator guide](https://ifrsconnect.com/ifrs-16-calculator)
 
-The calculator is free to use with no sign-up required.  
-Excel export is available on Pro.  
-→ [IFRS 16 Calculator](https://ifrsconnect.com/ifrs16calculator)
+IFRS Connect is a general-purpose software tool. It does not provide accounting advice, legal advice or a substitute for professional judgement where lease facts fall outside the supported automated scope.
+
+## Working papers and Excel export
+
+For audit and month-end review, IFRS Connect can export structured Excel working papers with liability, ROU asset and journal outputs on supported plans:
+
+- [IFRS 16 working papers](https://ifrsconnect.com/ifrs-16-working-papers)
 
 ## Built for
 
 - Finance teams managing lease portfolios under IFRS 16 or AASB 16
-- Accountants preparing audit-ready lease schedules
-- Auditors reviewing lessee calculations
-- Controllers needing repeatable month-end journals
+- Accountants preparing repeatable lease schedules and month-end journals
+- Auditors reviewing lessee calculations and supporting working papers
+- Controllers replacing fragile lease accounting spreadsheets with a browser-based workflow
 
-## Tech
+## Repository boundary
 
-Built on Bubble.io with a custom JavaScript calculation engine (~9,000 lines) 
-handling the full IFRS 16 remeasurement event model.
+This repository is a public product profile and backlink surface for IFRS Connect. It intentionally does not contain the proprietary calculator source code, export engine or private validation suite.
 
-## License
-
-This repository documents the public-facing product.  
-Calculation engine is proprietary.
+Calculation engine and application code are proprietary.
