@@ -1,0 +1,44 @@
+name: FX snapshot refresh
+
+# Regenerates fx/ecb-snapshot.json from the ECB reference-rate history so the
+# IFRS Connect rate feed has a fast, CORS-friendly primary served over jsDelivr:
+#   https://cdn.jsdelivr.net/gh/adamjabenn-prog/ifrsconnect-public@main/fx/ecb-snapshot.json
+# Runs entirely on GitHub's runners. fx/build-fx-snapshot.js VALIDATES before
+# writing, so a bad/stale ECB fetch fails the job and never overwrites a good file.
+# (The app's feed also falls back to frankfurter.dev, so this hosting is a speed
+# optimisation, never a correctness dependency.)
+
+on:
+  schedule:
+    - cron: '0 17 * * *'   # daily 17:00 UTC, after the ECB publishes the day's rates
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: fx-snapshot-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Regenerate the ECB snapshot
+        run: node fx/build-fx-snapshot.js --out fx/ecb-snapshot.json
+      - name: Commit if changed
+        run: |
+          if git diff --quiet -- fx/ecb-snapshot.json; then
+            echo "No change to the ECB snapshot."
+            exit 0
+          fi
+          git config user.name  "fx-snapshot-bot"
+          git config user.email "fx-snapshot-bot@users.noreply.github.com"
+          git add fx/ecb-snapshot.json
+          LAST=$(node -e "console.log(require('./fx/ecb-snapshot.json').meta.lastDate)")
+          git commit -m "chore(fx): refresh ECB snapshot to ${LAST}"
+          git push

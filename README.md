@@ -47,3 +47,7 @@ For audit and month-end review, IFRS Connect can export structured Excel working
 This repository is a public product profile and backlink surface for IFRS Connect. It intentionally does not contain the proprietary calculator source code, export engine or private validation suite.
 
 Calculation engine and application code are proprietary.
+
+## Exchange rate data
+
+`fx/ecb-snapshot.json` is a snapshot of the European Central Bank euro foreign-exchange reference rates, used by the calculator's optional presentation-currency (IAS 21) translation feature. Source: European Central Bank (https://www.ecb.europa.eu), freely reusable with attribution; rates are mid-market reference rates. Regenerated daily by a GitHub Action; served over jsDelivr for the app.
