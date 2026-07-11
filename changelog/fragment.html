@@ -1,4 +1,4 @@
-<!-- AUTO-GENERATED changelog fragment. Source registries: engine-changelog.json sha256 6a42aa703736abfbd49debad535079260331d6c674209ce437a5a3d2b2aa0785 | corrections-register.json sha256 85d0d6dd86f7b959275aa9a62cd1ceede112227eb2d0584ef63b3b52ef6871aa -->
+<!-- AUTO-GENERATED changelog fragment. Source registries: engine-changelog.json sha256 6a42aa703736abfbd49debad535079260331d6c674209ce437a5a3d2b2aa0785 | corrections-register.json sha256 8487c2e3b514096a9d0078690136e2bc4e885a337a84d6f10763b90514e1f102 -->
 <div data-changelog-fragment data-generated-at="2026-07-12T00:00:00+08:00">
 <p class="ic-disclaimer" data-role="changelog-asat">This log was generated on 2026-07-12 from the verification registries. Release checks block a figure-affecting change that lacks an entry.</p>
 
@@ -18,7 +18,14 @@
     <div class="ic-pub" id="corrections-register">
       <div class="ic-pub-head">
         <div><h3>Corrections register</h3><p>Input-reading and display fixes that did not change the engine</p></div>
-        <span class="ic-pub-count">6 entries</span>
+        <span class="ic-pub-count">7 entries</span>
+      </div>
+      <div class="ic-anchor" id="correction-c-7">
+        <div class="ic-anchor-head"><span class="ic-anchor-title">C-7 &middot; 2026-07-12</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="This fix changed input reading or display only; the calculation engine and every saved schedule computed from identical inputs are unchanged.">no engine change</span></span></div>
+        <div class="ic-anchor-class">Where: Calculator currency panel (IAS 21 FX Translation view); Schedule export FX Translation tab</div>
+        <p class="ic-src-cite">For a lease that had been remeasured before the reporting date, the single-lease FX Translation view worked out the derived exchange difference by treating the whole remeasurement uplift as if it were translated at the closing rate. That overstated the exchange gain or loss and routed an amount that belongs to the right-of-use asset (IFRS 16.39) through profit or loss. Working out the exchange difference on a remeasured lease needs the rate on each event date, which this single-rate view does not hold, so it no longer shows a derived exchange difference for these leases: it shows the balances and points to the disclosure note, which translates the lease layer by layer at each event date. Leases with no remeasurement are unchanged, the lease's own-currency schedule was never affected, and the note figure was always right.</p>
+        <p class="ic-no-run"><strong>Affected input shape:</strong> A foreign-currency lease that had been remeasured (a CPI change, a modification or a reassessment) before the reporting date, viewed at a reporting date in the single-lease FX Translation view. <strong>Window:</strong> From the currency features going live on 5 July 2026 until 12 July 2026.</p>
+        <p class="ic-no-run"><strong>What to check:</strong> Nothing for saved schedules. If you read a derived exchange difference off the FX Translation view or the schedule export's FX Translation tab for a lease that had a CPI change, modification or reassessment before the reporting date, use the disclosure note's figure instead, which translates the lease correctly at each event date.</p>
       </div>
       <div class="ic-anchor" id="correction-c-6">
         <div class="ic-anchor-head"><span class="ic-anchor-title">C-6 &middot; 2026-07-12</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="This fix changed input reading or display only; the calculation engine and every saved schedule computed from identical inputs are unchanged.">no engine change</span></span></div>
