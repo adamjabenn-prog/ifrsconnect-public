@@ -1,6 +1,6 @@
-<!-- AUTO-GENERATED changelog fragment. Source registries: engine-changelog.json sha256 6a42aa703736abfbd49debad535079260331d6c674209ce437a5a3d2b2aa0785 | corrections-register.json sha256 76ae6ce5a8dc92d7178a88f22e6491a15e4ec01c09837b9cd9c6aab4b104a644 -->
-<div data-changelog-fragment data-generated-at="2026-07-11T00:00:00+08:00">
-<p class="ic-disclaimer" data-role="changelog-asat">This log was generated on 2026-07-11 from the verification registries. Release checks block a figure-affecting change that lacks an entry.</p>
+<!-- AUTO-GENERATED changelog fragment. Source registries: engine-changelog.json sha256 6a42aa703736abfbd49debad535079260331d6c674209ce437a5a3d2b2aa0785 | corrections-register.json sha256 29ea1f11cb7d1bd761bccc2e7a72ce5cfca5d9f59798c894036cf9a929511624 -->
+<div data-changelog-fragment data-generated-at="2026-07-12T00:00:00+08:00">
+<p class="ic-disclaimer" data-role="changelog-asat">This log was generated on 2026-07-12 from the verification registries. Release checks block a figure-affecting change that lacks an entry.</p>
 
     <div class="ic-pub" id="engine-changelog">
       <div class="ic-pub-head">
@@ -18,7 +18,28 @@
     <div class="ic-pub" id="corrections-register">
       <div class="ic-pub-head">
         <div><h3>Corrections register</h3><p>Input-reading and display fixes that did not change the engine</p></div>
-        <span class="ic-pub-count">3 entries</span>
+        <span class="ic-pub-count">6 entries</span>
+      </div>
+      <div class="ic-anchor" id="correction-c-6">
+        <div class="ic-anchor-head"><span class="ic-anchor-title">C-6 &middot; 2026-07-12</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="This fix changed input reading or display only; the calculation engine and every saved schedule computed from identical inputs are unchanged.">no engine change</span></span></div>
+        <div class="ic-anchor-class">Where: Disclosure note (current and non-current lease liability split); Disclosure workbook</div>
+        <p class="ic-src-cite">The current portion of the lease liability was worked out as the fall in the balance over the next twelve months. For a lease that is still accruing interest with no payment due in the coming year the balance rises, so this produced a negative current liability. A liability is not presented as a negative amount (IAS 1.69). The current portion is now held at nil for such a lease and the whole balance sits in non-current, which is the standard presentation. The total lease liability was always right.</p>
+        <p class="ic-no-run"><strong>Affected input shape:</strong> A lease whose liability grows over the next twelve months, such as a lease in a rent-free period with nothing paid in the coming year. <strong>Window:</strong> From the disclosure note going live on 5 July 2026 until 12 July 2026.</p>
+        <p class="ic-no-run"><strong>What to check:</strong> None for saved schedules. If you downloaded a disclosure workbook showing a negative current lease liability in the window above, generate it again.</p>
+      </div>
+      <div class="ic-anchor" id="correction-c-5">
+        <div class="ic-anchor-head"><span class="ic-anchor-title">C-5 &middot; 2026-07-12</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="This fix changed input reading or display only; the calculation engine and every saved schedule computed from identical inputs are unchanged.">no engine change</span></span></div>
+        <div class="ic-anchor-class">Where: Disclosure note (presentation-currency note); Disclosure workbook rates sheet</div>
+        <p class="ic-src-cite">The average rate the note used to translate a year's interest was the average of the reporting month only. For a December year end that was the December average rather than the average across the whole year. Where rates moved through the year this put the interest line on the wrong average, with the difference absorbed into the exchange line, so the note still added up but the split between interest and exchange movement was off. The note now averages across the whole reporting year for the current year, and across the prior year for the comparative, which is the approximation IAS 21.40 intends. The total was always right.</p>
+        <p class="ic-no-run"><strong>Affected input shape:</strong> A foreign-currency lease shown in a presentation-currency note, where the average rate for the year was taken from the reporting month only. <strong>Window:</strong> From the disclosure note going live on 5 July 2026 until 12 July 2026.</p>
+        <p class="ic-no-run"><strong>What to check:</strong> None for saved schedules. If you downloaded a disclosure workbook with a foreign-currency note in the window above, generate it again so the interest and exchange lines use the year's average.</p>
+      </div>
+      <div class="ic-anchor" id="correction-c-4">
+        <div class="ic-anchor-head"><span class="ic-anchor-title">C-4 &middot; 2026-07-12</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="This fix changed input reading or display only; the calculation engine and every saved schedule computed from identical inputs are unchanged.">no engine change</span></span></div>
+        <div class="ic-anchor-class">Where: Calculator currency panel (IAS 21 view); Schedule export FX Translation tab</div>
+        <p class="ic-src-cite">The exchange difference on these two views was worked out from the lease start to the reporting date and shown as a single entry to post. At a second or later year end that is the whole difference built up since the lease began, not the difference that arose in the year, so posting it every year would count earlier years again. The panel and the tab now show the exchange difference that arose in the period then ended (the twelve months to the reporting date), with the opening balance carried at the prior year end rate, which is what IAS 21.28 asks you to recognise. Interest for the period is translated at that year's average rather than an average running back to the lease start. Lease schedules in the lease's own currency were never affected, and the first reporting period is unchanged.</p>
+        <p class="ic-no-run"><strong>Affected input shape:</strong> A foreign-currency lease translated at a second or later reporting period, that is, a reporting date more than twelve months after the lease started. <strong>Window:</strong> From the currency features going live on 5 July 2026 until 12 July 2026.</p>
+        <p class="ic-no-run"><strong>What to check:</strong> Nothing for saved schedules. If you posted the exchange difference from one of these views at a second or later year end, compare it with the period movement shown now, and if you downloaded a schedule export with the FX Translation tab in the window above, generate it again. The currency panel now also asks for the rate at the prior year end so it can work out the movement for the year.</p>
       </div>
       <div class="ic-anchor" id="correction-c-3">
         <div class="ic-anchor-head"><span class="ic-anchor-title">C-3 &middot; 2026-07-11</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="This fix changed input reading or display only; the calculation engine and every saved schedule computed from identical inputs are unchanged.">no engine change</span></span></div>
