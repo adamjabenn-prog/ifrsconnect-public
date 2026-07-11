@@ -1,0 +1,45 @@
+<!-- AUTO-GENERATED changelog fragment. Source registries: engine-changelog.json sha256 6a42aa703736abfbd49debad535079260331d6c674209ce437a5a3d2b2aa0785 | corrections-register.json sha256 03a4f0e3dc9e8f8bb8f8abc4db753f0fb3b44f1deb13de18696c8d4c1d02013b -->
+<div data-changelog-fragment data-generated-at="2026-07-11T00:00:00+08:00">
+<p class="ic-disclaimer" data-role="changelog-asat">This log was generated on 2026-07-11 from the verification registries. Release checks block a figure-affecting change that lacks an entry.</p>
+
+    <div class="ic-pub" id="engine-changelog">
+      <div class="ic-pub-head">
+        <div><h3>Engine changelog</h3><p>Figure-affecting engine changes, recorded at release</p></div>
+        <span class="ic-pub-count">1 entry</span>
+      </div>
+      <div class="ic-anchor" id="changelog-e-0">
+        <div class="ic-anchor-head"><span class="ic-anchor-title">E-0 &middot; 2026-07-10</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="The engine version stamp shipped with this entry.">engine 2026-07-10-push-v1</span></span></div>
+        <div class="ic-anchor-class">No user-visible figure changes</div>
+        <p class="ic-src-cite">Baseline entry: the changelog system goes live. The engine at this date reproduces 54 published worked examples (from the IASB, the major accounting firms, specialist IFRS educators and other software providers) plus 2 checkpoints derived independently from first principles, and passes the full 873-scenario governed suite. The proof page showcases the distinct examples that are publicly deep-linkable; the remainder run as test oracles only. No figure changes are recorded by this entry; it anchors the enforcement chain.</p>
+        <p class="ic-no-run">Figure-affecting changes are recorded here with the affected scenario classes, the size of representative differences, and the reason for the change.</p>
+      </div>
+    </div>
+
+    <div class="ic-pub" id="corrections-register">
+      <div class="ic-pub-head">
+        <div><h3>Corrections register</h3><p>Input-reading and display fixes that did not change the engine</p></div>
+        <span class="ic-pub-count">3 entries</span>
+      </div>
+      <div class="ic-anchor" id="correction-c-3">
+        <div class="ic-anchor-head"><span class="ic-anchor-title">C-3 &middot; 2026-07-11</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="This fix changed input reading or display only; the calculation engine and every saved schedule computed from identical inputs are unchanged.">no engine change</span></span></div>
+        <div class="ic-anchor-class">Where: Disclosure note ledger boxes (short-term, low-value, variable payments, sublease income)</div>
+        <p class="ic-src-cite">These boxes read European-style amounts with the separators swapped (5.000 was read as 5.00). Ledger amounts are typed fresh each time the note is built and are not stored, so no saved data was affected. The boxes now read amounts exactly like the calculator's own amount fields.</p>
+        <p class="ic-no-run"><strong>Affected input shape:</strong> Amounts typed with European separators (for example 5.000 meaning five thousand, or 1.234,56). <strong>Window:</strong> From the disclosure note going live on 5 July 2026 until 11 July 2026.</p>
+        <p class="ic-no-run"><strong>What to check:</strong> None. If you downloaded a disclosure workbook in the window above after typing a European-style ledger amount, generate it again.</p>
+      </div>
+      <div class="ic-anchor" id="correction-c-2">
+        <div class="ic-anchor-head"><span class="ic-anchor-title">C-2 &middot; 2026-07-11</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="This fix changed input reading or display only; the calculation engine and every saved schedule computed from identical inputs are unchanged.">no engine change</span></span></div>
+        <div class="ic-anchor-class">Where: Calculator CPI index input</div>
+        <p class="ic-src-cite">A CPI index in the three-decimal shape was converted to a whole number before calculation (314.175 became 314175), overstating the index one thousand times. If a lease was calculated and saved with such an index, the saved schedule carries the converted number. The index is now passed to the engine exactly as typed, and an index containing a comma is stopped with a message asking for a dot decimal, because commas mean different things in different countries.</p>
+        <p class="ic-no-run"><strong>Affected input shape:</strong> A CPI index written with exactly three decimals (for example 314.175), or with a comma. <strong>Window:</strong> Until 11 July 2026.</p>
+        <p class="ic-no-run"><strong>What to check:</strong> Open any saved lease that has CPI events and check the index box shows the number you meant. If it shows something like 314175 where you meant 314.175, correct it, recalculate and save again.</p>
+      </div>
+      <div class="ic-anchor" id="correction-c-1">
+        <div class="ic-anchor-head"><span class="ic-anchor-title">C-1 &middot; 2026-07-11</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="This fix changed input reading or display only; the calculation engine and every saved schedule computed from identical inputs are unchanged.">no engine change</span></span></div>
+        <div class="ic-anchor-class">Where: Calculator currency panel (IAS 21 view); Disclosure note rate panel</div>
+        <p class="ic-src-cite">An exchange rate in the affected shape was read as a thousands-grouped whole number (1.452 became 1452), so translated figures on these panels displayed up to one thousand times too large. Lease schedules in the lease's own currency were never affected. The rate boxes now read a separator as a decimal point on every rate field.</p>
+        <p class="ic-no-run"><strong>Affected input shape:</strong> An exchange rate written as a one-to-three digit whole number, a separator, then exactly three decimals (for example 1.452). <strong>Window:</strong> From the currency features going live on 5 July 2026 until 11 July 2026.</p>
+        <p class="ic-no-run"><strong>What to check:</strong> Nothing for saved schedules. These panels re-read the saved rate text, so affected displays corrected themselves the next time the lease was opened. If you downloaded a disclosure workbook with translated figures in the window above, generate it again.</p>
+      </div>
+    </div>
+</div>
