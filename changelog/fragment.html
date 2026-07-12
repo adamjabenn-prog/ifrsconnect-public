@@ -1,4 +1,4 @@
-<!-- AUTO-GENERATED changelog fragment. Source registries: engine-changelog.json sha256 6a42aa703736abfbd49debad535079260331d6c674209ce437a5a3d2b2aa0785 | corrections-register.json sha256 6b367bd6c09cfe34848b9a96068f8f6ed72f2e258a603684ecec5d4af71d4413 -->
+<!-- AUTO-GENERATED changelog fragment. Source registries: engine-changelog.json sha256 6a42aa703736abfbd49debad535079260331d6c674209ce437a5a3d2b2aa0785 | corrections-register.json sha256 14868efb5526e6929b4878f5359d88933381d9b899ae33e10bbaef350eedeac4 -->
 <div data-changelog-fragment data-generated-at="2026-07-12T00:00:00+08:00">
 <p class="ic-disclaimer" data-role="changelog-asat">This log was generated on 2026-07-12 from the verification registries. Release checks block a figure-affecting change that lacks an entry.</p>
 
@@ -18,7 +18,14 @@
     <div class="ic-pub" id="corrections-register">
       <div class="ic-pub-head">
         <div><h3>Corrections register</h3><p>Input-reading and display fixes that did not change the engine</p></div>
-        <span class="ic-pub-count">8 entries</span>
+        <span class="ic-pub-count">9 entries</span>
+      </div>
+      <div class="ic-anchor" id="correction-c-9">
+        <div class="ic-anchor-head"><span class="ic-anchor-title">C-9 &middot; 2026-07-12</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="This fix changed input reading or display only; the calculation engine and every saved schedule computed from identical inputs are unchanged.">no engine change</span></span></div>
+        <div class="ic-anchor-class">Where: Schedule export Depreciation Walkthrough tab (leases whose end date was changed by a modification or reassessment)</div>
+        <p class="ic-src-cite">Before the end-date change takes effect, the schedules correctly depreciate the right-of-use asset over the lease term that was in force at the time. The Depreciation Walkthrough sheet, which shows the working behind each period's depreciation, instead measured its 'Remaining Frame' on those earlier rows against the revised term. On a shortened lease that understated the frame, so Expected Depreciation ran too high and the Diff columns grew period by period; on an extended lease the frame picked up one month too many. Rows from the change date onwards were always right. As with the purchase-option correction (C-8), the actual depreciation in the ROU schedule, the journals and every balance were always correct; only the walkthrough's explanatory columns disagreed with them. The walkthrough now measures each row against the lease end in force for that row, and the workbook's walkthrough controls fail if the sheet ever disagrees with the schedule again.</p>
+        <p class="ic-no-run"><strong>Affected input shape:</strong> A lease with a modification or reassessment that changed the lease end date (shortened or extended), exported with the Depreciation Walkthrough sheet. The rows before the change date were affected. <strong>Window:</strong> From the walkthrough sheet going live on 12 June 2026 until 12 July 2026.</p>
+        <p class="ic-no-run"><strong>What to check:</strong> Nothing for the lease figures: the ROU schedule, journals and balances were always correct. If you exported a lease with an end-date change before 12 July 2026, ignore the Expected Depreciation and Diff columns on the rows before the change on that workbook's Depreciation Walkthrough sheet, or re-export to get a corrected sheet.</p>
       </div>
       <div class="ic-anchor" id="correction-c-8">
         <div class="ic-anchor-head"><span class="ic-anchor-title">C-8 &middot; 2026-07-12</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="This fix changed input reading or display only; the calculation engine and every saved schedule computed from identical inputs are unchanged.">no engine change</span></span></div>
