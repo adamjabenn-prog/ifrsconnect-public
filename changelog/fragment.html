@@ -1,4 +1,4 @@
-<!-- AUTO-GENERATED changelog fragment. Source registries: engine-changelog.json sha256 6a42aa703736abfbd49debad535079260331d6c674209ce437a5a3d2b2aa0785 | corrections-register.json sha256 547f7240d711c23f81d6fbf4a1b4fe78c6c493963196f4eb63b3255943da1cb8 -->
+<!-- AUTO-GENERATED changelog fragment. Source registries: engine-changelog.json sha256 6a42aa703736abfbd49debad535079260331d6c674209ce437a5a3d2b2aa0785 | corrections-register.json sha256 6b367bd6c09cfe34848b9a96068f8f6ed72f2e258a603684ecec5d4af71d4413 -->
 <div data-changelog-fragment data-generated-at="2026-07-12T00:00:00+08:00">
 <p class="ic-disclaimer" data-role="changelog-asat">This log was generated on 2026-07-12 from the verification registries. Release checks block a figure-affecting change that lacks an entry.</p>
 
@@ -18,7 +18,14 @@
     <div class="ic-pub" id="corrections-register">
       <div class="ic-pub-head">
         <div><h3>Corrections register</h3><p>Input-reading and display fixes that did not change the engine</p></div>
-        <span class="ic-pub-count">7 entries</span>
+        <span class="ic-pub-count">8 entries</span>
+      </div>
+      <div class="ic-anchor" id="correction-c-8">
+        <div class="ic-anchor-head"><span class="ic-anchor-title">C-8 &middot; 2026-07-12</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="This fix changed input reading or display only; the calculation engine and every saved schedule computed from identical inputs are unchanged.">no engine change</span></span></div>
+        <div class="ic-anchor-class">Where: Schedule export Depreciation Walkthrough tab (purchase-option leases)</div>
+        <p class="ic-src-cite">On a purchase-option lease the schedules correctly depreciate the right-of-use asset over the asset's useful life rather than the lease term (IFRS 16.32). The Depreciation Walkthrough sheet, which shows the working behind each period's depreciation, wrongly measured its 'Remaining Frame' to the lease end instead of the useful-life end on the in-lease rows. So its Expected Depreciation, Depreciation Diff, Expected Closing ROU and Closing Diff columns were wrong on those rows: the Diff column grew from around one month's depreciation at the start to the entire remaining carrying amount at the final lease period, and Expected Closing ROU showed zero at lease end while the schedule correctly carried the asset into the owned-asset period. The actual depreciation numbers in the ROU schedule, the journals and every balance were always right; only the walkthrough's explanatory columns disagreed with them. The walkthrough now uses the same useful-life horizon as the schedules, and the workbook's walkthrough controls now fail if the walkthrough ever disagrees with the schedule again.</p>
+        <p class="ic-no-run"><strong>Affected input shape:</strong> A lease with a purchase option that is reasonably certain to be exercised and an asset useful life longer than the lease term, exported with the Depreciation Walkthrough sheet. <strong>Window:</strong> From the purchase-option features going live on 2 July 2026 until 12 July 2026.</p>
+        <p class="ic-no-run"><strong>What to check:</strong> Nothing for the lease figures: the ROU schedule, journals and balances were always correct. If you exported a purchase-option lease before 12 July 2026, ignore the Expected Depreciation and Diff columns on that workbook's Depreciation Walkthrough sheet, or re-export to get a corrected sheet.</p>
       </div>
       <div class="ic-anchor" id="correction-c-7">
         <div class="ic-anchor-head"><span class="ic-anchor-title">C-7 &middot; 2026-07-12</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="This fix changed input reading or display only; the calculation engine and every saved schedule computed from identical inputs are unchanged.">no engine change</span></span></div>
