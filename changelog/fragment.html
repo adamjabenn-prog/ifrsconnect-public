@@ -1,4 +1,4 @@
-<!-- AUTO-GENERATED changelog fragment. Source registries: engine-changelog.json sha256 8aee7bad7b86bc376b2a817f206828f992990ecdcf391efd75bf331bc0debec9 | corrections-register.json sha256 14868efb5526e6929b4878f5359d88933381d9b899ae33e10bbaef350eedeac4 -->
+<!-- AUTO-GENERATED changelog fragment. Source registries: engine-changelog.json sha256 8aee7bad7b86bc376b2a817f206828f992990ecdcf391efd75bf331bc0debec9 | corrections-register.json sha256 9dfd3785248c404e529baa83fd45644f201993253b3d7f374992298ad9640065 -->
 <div data-changelog-fragment data-generated-at="2026-07-18T00:00:00+08:00">
 <p class="ic-disclaimer" data-role="changelog-asat">This log was generated on 2026-07-18 from the verification registries. Release checks block a figure-affecting change that lacks an entry.</p>
 
@@ -30,7 +30,14 @@
     <div class="ic-pub" id="corrections-register">
       <div class="ic-pub-head">
         <div><h3>Corrections register</h3><p>Input-reading and display fixes that did not change the engine</p></div>
-        <span class="ic-pub-count">9 entries</span>
+        <span class="ic-pub-count">10 entries</span>
+      </div>
+      <div class="ic-anchor" id="correction-c-10">
+        <div class="ic-anchor-head"><span class="ic-anchor-title">C-10 &middot; 2026-07-18</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="This fix changed input reading or display only; the calculation engine and every saved schedule computed from identical inputs are unchanged.">no engine change</span></span></div>
+        <div class="ic-anchor-class">Where: Calculator currency panel (IAS 21 FX Translation view); Schedule export FX Translation tab</div>
+        <p class="ic-src-cite">The exchange difference on the lease liability translated the period's lease payment at the year's average rate. Where the period holds a single payment that settles on the reporting date, the average is not standing in for a spread of payments: the payment's own date is the reporting date, so its rate is the closing (spot) rate for that date (IAS 21.21, 21.8). Translating it at the average instead moved the shown exchange gain or loss by the payment times the gap between the average and closing rates. The view now translates a payment settling on the reporting date at the closing rate; where payments are spread across the period they keep the year average, which IAS 21.22 allows. The lease's own-currency schedule was never affected, the closing lease liability was always right, and the check that the exchange difference equals its independent build-up still ties.</p>
+        <p class="ic-no-run"><strong>Affected input shape:</strong> A foreign-currency lease shown in a presentation currency where a single lease payment falls on the reporting date and there is no other payment in the reporting period, such as a lease paying once a year in arrears looked at that year end. <strong>Window:</strong> From the currency features going live on 5 July 2026 until 18 July 2026.</p>
+        <p class="ic-no-run"><strong>What to check:</strong> Nothing for saved schedules. The currency panel re-reads the saved rates and works the figure out again the next time the lease is opened. If you downloaded a schedule export with the FX Translation tab for a lease of this shape in the window above, generate it again.</p>
       </div>
       <div class="ic-anchor" id="correction-c-9">
         <div class="ic-anchor-head"><span class="ic-anchor-title">C-9 &middot; 2026-07-12</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="This fix changed input reading or display only; the calculation engine and every saved schedule computed from identical inputs are unchanged.">no engine change</span></span></div>
