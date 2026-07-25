@@ -1,4 +1,4 @@
-<!-- AUTO-GENERATED changelog fragment. Source registries: engine-changelog.json sha256 8e3e0df271a29ce19759d0070daecab1336591e2ebbb901a8b4baf2db6c81915 | corrections-register.json sha256 01094b11005413bf87b844eea6cf386ce29275b1b4fd3fa04f38ca299f7d603b -->
+<!-- AUTO-GENERATED changelog fragment. Source registries: engine-changelog.json sha256 8e3e0df271a29ce19759d0070daecab1336591e2ebbb901a8b4baf2db6c81915 | corrections-register.json sha256 56badca01389777791b9be828e09bbaa748d334613eabc2111d7904a67e35240 -->
 <div data-changelog-fragment data-generated-at="2026-07-25T00:00:00+08:00">
 <p class="ic-disclaimer" data-role="changelog-asat">This log was generated on 2026-07-25 from the verification registries. Release checks block a figure-affecting change that lacks an entry.</p>
 
@@ -114,7 +114,14 @@
     <div class="ic-pub" id="corrections-register">
       <div class="ic-pub-head">
         <div><h3>Corrections register</h3><p>Input-reading and display fixes that did not change the engine</p></div>
-        <span class="ic-pub-count">11 entries</span>
+        <span class="ic-pub-count">12 entries</span>
+      </div>
+      <div class="ic-anchor" id="correction-c-12">
+        <div class="ic-anchor-head"><span class="ic-anchor-title">C-12 &middot; 2026-07-25</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="This fix changed input reading or display only; the calculation engine and every saved schedule computed from identical inputs are unchanged.">no engine change</span></span></div>
+        <div class="ic-anchor-class">Where: Calculator input form (discount rate, base rent)</div>
+        <p class="ic-src-cite">The form demanded two figures that the calculation could not use, and said nothing about it. On a lease using the short-term or low-value exemption, the form would not let you continue without a discount rate, even though the exemption spreads the payments and no discount rate can affect any figure. Finding an incremental borrowing rate is often genuinely difficult, so this asked people to hunt for a number that did nothing. Separately, where a stepped rent table sets out the rent for every period, the base rent field stayed required while the table completely replaced it, so changing it moved nothing at all. Neither of these ever produced a wrong figure. The problem was that the form implied a figure depended on something it did not, which teaches you to distrust the tool or, worse, to believe a result rests on a number it never read. Both fields now say plainly that this lease cannot use them, so you are no longer left to guess. Where the calculator still needs something in the box to run at all, it tells you exactly what to put instead of sending you off to find a number it would never read. No saved lease changes, and no figure on any schedule, journal or export moves.</p>
+        <p class="ic-no-run"><strong>Affected input shape:</strong> A lease you have marked as short-term or low-value under the recognition exemption, and any lease where you have entered a stepped rent table that replaces the base rent. <strong>Window:</strong> From these fields being introduced until 25 July 2026.</p>
+        <p class="ic-no-run"><strong>What to check:</strong> Nothing to do. If you previously entered a discount rate on an exempt lease, or a base rent alongside a stepped table, those entries were never used in any calculation and your figures were correct.</p>
       </div>
       <div class="ic-anchor" id="correction-c-11">
         <div class="ic-anchor-head"><span class="ic-anchor-title">C-11 &middot; 2026-07-18</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="This fix changed input reading or display only; the calculation engine and every saved schedule computed from identical inputs are unchanged.">no engine change</span></span></div>
