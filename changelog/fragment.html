@@ -1,4 +1,4 @@
-<!-- AUTO-GENERATED changelog fragment. Source registries: engine-changelog.json sha256 01b365b576a1dc4a6c199432e5c21b54b714158f3fafb448fdae8ba992c42766 | corrections-register.json sha256 56badca01389777791b9be828e09bbaa748d334613eabc2111d7904a67e35240 -->
+<!-- AUTO-GENERATED changelog fragment. Source registries: engine-changelog.json sha256 01b365b576a1dc4a6c199432e5c21b54b714158f3fafb448fdae8ba992c42766 | corrections-register.json sha256 eee94c4772ff590b53ca917cdd2af586facdc67ffb75b2f9a9b2f2e0b44c5ed9 -->
 <div data-changelog-fragment data-generated-at="2026-07-26T00:00:00+08:00">
 <p class="ic-disclaimer" data-role="changelog-asat">This log was generated on 2026-07-26 from the verification registries. Release checks block a figure-affecting change that lacks an entry.</p>
 
@@ -142,7 +142,14 @@ References: IFRS 16 paragraph 36, a lease liability is carried at amortised cost
     <div class="ic-pub" id="corrections-register">
       <div class="ic-pub-head">
         <div><h3>Corrections register</h3><p>Input-reading and display fixes that did not change the engine</p></div>
-        <span class="ic-pub-count">12 entries</span>
+        <span class="ic-pub-count">13 entries</span>
+      </div>
+      <div class="ic-anchor" id="correction-c-13">
+        <div class="ic-anchor-head"><span class="ic-anchor-title">C-13 &middot; 2026-07-26</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="This fix changed input reading or display only; the calculation engine and every saved schedule computed from identical inputs are unchanged.">no engine change</span></span></div>
+        <div class="ic-anchor-class">Where: Calculator input form (base rent); Excel export (Inputs sheet, Checks sheet, certification state)</div>
+        <p class="ic-src-cite">Where you set the rent using agreed amounts by year, one of the workbook checks was reading the plain rent box as though it were your declaration of the first year's rent. Under agreed amounts by year, the table is the declaration and that box plays no part in any figure. So the check compared two things that were never meant to match, and it failed. Seven of the fourteen lease shapes we tested this way came back stamped as needing action, on figures that were right to the cent. If you left an old amount sitting in that box because our own note told you it was no longer used, that is exactly the lease it failed. The same check could not see the thing it existed to catch, which is someone quietly rewriting one of the agreed amounts. Both halves are fixed. The check now reads the rent from the agreed amounts, where you actually declared it.</p>
+        <p class="ic-no-run"><strong>Affected input shape:</strong> A lease where you set the rent using agreed amounts by year, and a lease using the short-term or low-value exemption that also carries a purchase option price. <strong>Window:</strong> From these checks being introduced until 26 July 2026.</p>
+        <p class="ic-no-run"><strong>What to check:</strong> Nothing to do, and no figure changes. Your schedules, journals and totals were always right. If a pack of yours was stamped as needing action for this reason, exporting it again will show it clean. The rent box is no longer demanded when agreed amounts are set, and the Inputs sheet now says the box is superseded by the table instead of printing a nought, which was telling whoever reviewed your pack that the rent was nothing. A purchase option price on a lease using the exemption was printing a nought the same way and now says it is not used.</p>
       </div>
       <div class="ic-anchor" id="correction-c-12">
         <div class="ic-anchor-head"><span class="ic-anchor-title">C-12 &middot; 2026-07-25</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="This fix changed input reading or display only; the calculation engine and every saved schedule computed from identical inputs are unchanged.">no engine change</span></span></div>
