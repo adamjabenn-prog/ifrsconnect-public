@@ -1,11 +1,17 @@
-<!-- AUTO-GENERATED changelog fragment. Source registries: engine-changelog.json sha256 ed31381c52cfbab1d1c3038cef5c0eeb3e0e68b4844e248b99c6006887cdeeb0 | corrections-register.json sha256 dd31c05ddb8907eb3e4ec5a28566f25627cfd9961c49911f7f3ce1de957d7c2e -->
+<!-- AUTO-GENERATED changelog fragment. Source registries: engine-changelog.json sha256 f96025302d691bffe28aa17d0db35f49b9e5f3ff4c8de10768617cd5ecd77264 | corrections-register.json sha256 dd31c05ddb8907eb3e4ec5a28566f25627cfd9961c49911f7f3ce1de957d7c2e -->
 <div data-changelog-fragment data-generated-at="2026-07-26T00:00:00+08:00">
 <p class="ic-disclaimer" data-role="changelog-asat">This log was generated on 2026-07-26 from the verification registries. Release checks block a figure-affecting change that lacks an entry.</p>
 
     <div class="ic-pub" id="engine-changelog">
       <div class="ic-pub-head">
         <div><h3>Engine changelog</h3><p>Figure-affecting engine changes, recorded at release</p></div>
-        <span class="ic-pub-count">21 entries</span>
+        <span class="ic-pub-count">22 entries</span>
+      </div>
+      <div class="ic-anchor" id="changelog-e-21">
+        <div class="ic-anchor-head"><span class="ic-anchor-title">E-21 &middot; 2026-07-26</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="When this engine release shipped.">engine release 26 July 2026</span></span></div>
+        <div class="ic-anchor-class">No user-visible figure changes</div>
+        <p class="ic-src-cite">No figure changes anywhere, on any lease, and nothing already exported was miscalculated by this. It closes a way the calculator could have gone wrong quietly in future rather than fixing something it was doing wrong today. When the schedule is built, two payment entries can in principle compete for the same month, and only the earlier one is used. On every input we can construct that situation never arises, and it did not arise across six thousand test leases. But if it ever did, the amount that lost would simply have vanished from the schedule while the amount you owe had already been measured on it, so the schedule would quietly pay less than the lease says and the closing balance would not reach nil, with nothing anywhere telling you. The row now records what was set aside, so it can never happen without being visible. An adversary checking this work found the same hole one step further along, where an entry carries no interest cost but does carry cash, and that is closed in the same change.</p>
+        <p class="ic-no-run">Two claims in the code comments were checked by measurement and both were wrong, so they are corrected here rather than left to mislead. The first said the situation arises after a mid-month shortening of the term; three hundred and seventy eight scenarios produced none. The second said sharing a calendar month cannot mean sharing a schedule slot; over three hundred and sixty runs, two pairs shared both. What actually keeps this from arising is an earlier step that merges the payment streams and removes the duplicate before the schedule is built. The choice to keep the earlier entry is also not required by the standard, which says nothing about one payment per period; it is right because the entry that loses is an artefact of merging two streams rather than a second amount the lease makes payable, and if a genuine second amount ever arrived the recording is what would make it visible.</p>
       </div>
       <div class="ic-anchor" id="changelog-e-20">
         <div class="ic-anchor-head"><span class="ic-anchor-title">E-20 &middot; 2026-07-26</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="When this engine release shipped.">engine release 26 July 2026</span></span></div>
