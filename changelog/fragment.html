@@ -1,11 +1,17 @@
-<!-- AUTO-GENERATED changelog fragment. Source registries: engine-changelog.json sha256 f96025302d691bffe28aa17d0db35f49b9e5f3ff4c8de10768617cd5ecd77264 | corrections-register.json sha256 605b60115bf200fef3323b062bfefacd597eed304ad8dcea4994c8efb5857214 -->
+<!-- AUTO-GENERATED changelog fragment. Source registries: engine-changelog.json sha256 8fcba3b8f48e8b617adeafc153135b4b4cbb05c629daa599fb035914c89f1884 | corrections-register.json sha256 605b60115bf200fef3323b062bfefacd597eed304ad8dcea4994c8efb5857214 -->
 <div data-changelog-fragment data-generated-at="2026-07-27T00:00:00+08:00">
 <p class="ic-disclaimer" data-role="changelog-asat">This log was generated on 2026-07-27 from the verification registries. Release checks block a figure-affecting change that lacks an entry.</p>
 
     <div class="ic-pub" id="engine-changelog">
       <div class="ic-pub-head">
         <div><h3>Engine changelog</h3><p>Figure-affecting engine changes, recorded at release</p></div>
-        <span class="ic-pub-count">22 entries</span>
+        <span class="ic-pub-count">23 entries</span>
+      </div>
+      <div class="ic-anchor" id="changelog-e-23">
+        <div class="ic-anchor-head"><span class="ic-anchor-title">E-23 &middot; 2026-07-27</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="When this engine release shipped.">engine release 27 July 2026</span></span></div>
+        <div class="ic-anchor-class">Affected: Leases where the rent is paid in advance</div>
+        <p class="ic-src-cite">On a lease where the rent is paid in advance, the journal now dates each period's interest and depreciation to the end of the period they belong to. They used to be dated the first day of the following period. No amount has changed and no balance has changed. What changes is which month, and in some cases which financial year, an expense falls into. The clearest effect is on the very first month: a lease starting on 1 January previously showed no interest and no depreciation at all for January, even though the asset was in use from day one. It now shows both, dated 31 January. Leases where the rent is paid in arrears were always dated correctly and are unaffected.</p>
+        <p class="ic-no-run">Interest is a charge for each period the lease liability is outstanding, and depreciation runs from the commencement date, so both belong to the period the schedule row covers. Paying in advance changes the balance the interest is calculated on, which the calculator already handled correctly, but it does not move the period the expense falls into. The old rule was also inconsistent with itself: the final period has no following period, so it fell back to its own period end, meaning a single lease used two different rules. Because the dates moved, a saved schedule re-rendered today will show these rows on different dates from a copy exported before this change, and the calculator will tell you so. The amounts on those rows are identical. Two related things were corrected at the same time. The check that verifies journal dates was expecting exactly what the calculator was producing, so it agreed with the error and never reported it; it now takes its expectation from the schedule independently. And on leases priced in US dollars the journal was not listed in date order, because the dates were being read back in a different format from the one they were written in, which pushed every period-end row to the bottom of the list.</p>
       </div>
       <div class="ic-anchor" id="changelog-e-21">
         <div class="ic-anchor-head"><span class="ic-anchor-title">E-21 &middot; 2026-07-26</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="When this engine release shipped.">engine release 26 July 2026</span></span></div>
