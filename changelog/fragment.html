@@ -1,11 +1,17 @@
-<!-- AUTO-GENERATED changelog fragment. Source registries: engine-changelog.json sha256 a31edf47624f53616fccca678e039fbf9eead9a716ee54f0fccd43d33b34d7e8 | corrections-register.json sha256 605b60115bf200fef3323b062bfefacd597eed304ad8dcea4994c8efb5857214 -->
-<div data-changelog-fragment data-generated-at="2026-07-27T00:00:00+08:00">
-<p class="ic-disclaimer" data-role="changelog-asat">This log was generated on 2026-07-27 from the verification registries. Release checks block a figure-affecting change that lacks an entry.</p>
+<!-- AUTO-GENERATED changelog fragment. Source registries: engine-changelog.json sha256 0626fff86c03f43102c30f2ed409e79606c04f83abf2eae8105f487bba1ce91c | corrections-register.json sha256 605b60115bf200fef3323b062bfefacd597eed304ad8dcea4994c8efb5857214 -->
+<div data-changelog-fragment data-generated-at="2026-08-01T00:00:00+08:00">
+<p class="ic-disclaimer" data-role="changelog-asat">This log was generated on 2026-08-01 from the verification registries. Release checks block a figure-affecting change that lacks an entry.</p>
 
     <div class="ic-pub" id="engine-changelog">
       <div class="ic-pub-head">
         <div><h3>Engine changelog</h3><p>Figure-affecting engine changes, recorded at release</p></div>
-        <span class="ic-pub-count">23 entries</span>
+        <span class="ic-pub-count">24 entries</span>
+      </div>
+      <div class="ic-anchor" id="changelog-e-24">
+        <div class="ic-anchor-head"><span class="ic-anchor-title">E-24 &middot; 2026-08-01</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="When this engine release shipped.">engine release 27 July 2026</span></span></div>
+        <div class="ic-anchor-class">No user-visible figure changes</div>
+        <p class="ic-src-cite">No figure changed anywhere, on any lease, and nothing already calculated or exported is affected. This changes only how our own internal test system takes a fingerprint of a result so it can tell whether anything has moved since last time.</p>
+        <p class="ic-no-run">The fingerprint used to be taken to a fixed number of decimal places. On a lease of several hundred thousand that worked out finer than a computer can reproduce the same arithmetic twice on two different machines, so the same lease could fingerprint two different ways depending on where the check ran. The figures were identical; only the very last digits, far beyond a cent, differed. The fingerprint is now taken to a number of meaningful digits instead, chosen by measurement over nine hundred leases and more than four million individual figures so that it still notices a change of a thousandth of a currency unit while ignoring differences no arithmetic can reproduce. Every recorded fingerprint was retaken, which is why they all differ from the previous release, and every one of the checks that compare actual amounts stayed green throughout, which is what shows no figure moved.</p>
       </div>
       <div class="ic-anchor" id="changelog-e-23">
         <div class="ic-anchor-head"><span class="ic-anchor-title">E-23 &middot; 2026-07-27</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="When this engine release shipped.">engine release 27 July 2026</span></span></div>
