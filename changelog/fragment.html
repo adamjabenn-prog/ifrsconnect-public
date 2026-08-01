@@ -1,4 +1,4 @@
-<!-- AUTO-GENERATED changelog fragment. Source registries: engine-changelog.json sha256 a53b7f8e5de27b8a32390bc1898e158b1ac3fac7d7c7dd507598d0ab2260fdb4 | corrections-register.json sha256 f1b51334e9e2c10707d7f6c82060dd09e51fd0a9810a7a0bb2a54562579a505b -->
+<!-- AUTO-GENERATED changelog fragment. Source registries: engine-changelog.json sha256 a53b7f8e5de27b8a32390bc1898e158b1ac3fac7d7c7dd507598d0ab2260fdb4 | corrections-register.json sha256 6c29e7b76865a7bad45366af13e722941dc04c5a238aad6b2416f8a727bb46be -->
 <div data-changelog-fragment data-generated-at="2026-08-01T00:00:00+08:00">
 <p class="ic-disclaimer" data-role="changelog-asat">This log was generated on 2026-08-01 from the verification registries. Release checks block a figure-affecting change that lacks an entry.</p>
 
@@ -172,7 +172,14 @@ References: IFRS 16 paragraph 36, a lease liability is carried at amortised cost
     <div class="ic-pub" id="corrections-register">
       <div class="ic-pub-head">
         <div><h3>Corrections register</h3><p>Input-reading and display fixes that did not change the engine</p></div>
-        <span class="ic-pub-count">19 entries</span>
+        <span class="ic-pub-count">20 entries</span>
+      </div>
+      <div class="ic-anchor" id="correction-c-20">
+        <div class="ic-anchor-head"><span class="ic-anchor-title">C-20 &middot; 2026-08-01</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="This fix changed input reading or display only; the calculation engine and every saved schedule computed from identical inputs are unchanged.">no engine change</span></span></div>
+        <div class="ic-anchor-class">Where: Excel export</div>
+        <p class="ic-src-cite">On a lease priced in US dollars, the date you entered for receiving a lease incentive could be written into the exported workbook with the day and the month the wrong way round. Where the day was the twelfth or earlier both numbers looked like a possible month, so the workbook accepted the swapped date and stored it as a real date rather than as text. That is the part worth knowing: it did not look broken. It looked like an ordinary date and it changed to match whatever date settings the person opening the file had, so a reader in Australia or Britain saw a confident, ordinary looking date that was not the one you typed. In the examples we checked it landed twenty seven days early on one lease and a hundred and seventy eight days early on another. Where the day was the thirteenth or later the swap was impossible, so instead of a wrong date the workbook stored the text exactly as the engine had written it, which was month first and could still be read as a different month by someone used to day first dates. Every calculated figure was correct throughout. The liability, the right of use asset, the interest, the schedules and the journals were never affected, and nothing needs recalculating. What was wrong was one date printed beside them.</p>
+        <p class="ic-no-run"><strong>Affected input shape:</strong> a lease priced in US dollars that records the date a lease incentive was received <strong>Window:</strong> from the introduction of the incentive receipt date until 1 August 2026</p>
+        <p class="ic-no-run"><strong>What to check:</strong> Nothing to recalculate. If you exported a workbook for a lease priced in US dollars that records a lease incentive receipt date, open it and check that one date against what you entered. If it differs, export the lease again and the new workbook will carry the date you typed. Leases in other currencies were never affected, and neither was any figure.</p>
       </div>
       <div class="ic-anchor" id="correction-c-19">
         <div class="ic-anchor-head"><span class="ic-anchor-title">C-19 &middot; 2026-08-01</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="This fix changed input reading or display only; the calculation engine and every saved schedule computed from identical inputs are unchanged.">no engine change</span></span></div>
