@@ -1,11 +1,17 @@
-<!-- AUTO-GENERATED changelog fragment. Source registries: engine-changelog.json sha256 26b6b94c6a77506512c11707f36488226541c71edf0beca542c4a55d1d608a02 | corrections-register.json sha256 7e680879b32956105e183eac8658191c3c890c4434a89dcd307b53190151e505 -->
+<!-- AUTO-GENERATED changelog fragment. Source registries: engine-changelog.json sha256 5f744454725389b2d6b1c8c62a264f77ebda1d957841db127b4a9a27ef89a9ac | corrections-register.json sha256 7e680879b32956105e183eac8658191c3c890c4434a89dcd307b53190151e505 -->
 <div data-changelog-fragment data-generated-at="2026-08-03T00:00:00+08:00">
 <p class="ic-disclaimer" data-role="changelog-asat">This log was generated on 2026-08-03 from the verification registries. Release checks block a figure-affecting change that lacks an entry.</p>
 
     <div class="ic-pub" id="engine-changelog">
       <div class="ic-pub-head">
         <div><h3>Engine changelog</h3><p>Figure-affecting engine changes, recorded at release</p></div>
-        <span class="ic-pub-count">26 entries</span>
+        <span class="ic-pub-count">27 entries</span>
+      </div>
+      <div class="ic-anchor" id="changelog-e-27">
+        <div class="ic-anchor-head"><span class="ic-anchor-title">E-27 &middot; 2026-08-03</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="When this engine release shipped.">engine release 3 August 2026</span></span></div>
+        <div class="ic-anchor-class">Affected: Leases where you entered a date on which you received a lease incentive</div>
+        <p class="ic-src-cite">No amount changes on any lease, and no interest, balance or charge is affected. If you entered a date on which you received a lease incentive, the date the workbook printed for it could be a different day from the one you typed and from the one the calculator used. It happened where the day and the month could each be read as the other, so a date typed as the fifth of June could be printed as the sixth of May. It affected leases presented in a currency whose dates are written month first, and no others. The calculator now holds that date one way everywhere, so what you typed, what it uses and what the workbook prints are the same day.</p>
+        <p class="ic-no-run">The date was being stored in a form that depended on the currency, at three separate points inside the calculator, and one of those points kept whatever separator was typed. The result was that the same day could be held in two different ways at once, and the workbook wrote one of them into a real date cell while the calculation had used the other. Measured across a corpus of leases, four in every hundred were affected: every one of them presented in a currency written month first with a day and month that could be swapped, and none at all in any other currency or with any unambiguous date. If you hold a workbook for a lease with an incentive receipt date, open the Inputs tab and compare the receipt date row against what you entered. Exporting that lease again after this change gives a workbook that agrees with your entry.</p>
       </div>
       <div class="ic-anchor" id="changelog-e-26">
         <div class="ic-anchor-head"><span class="ic-anchor-title">E-26 &middot; 2026-08-03</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="When this engine release shipped.">engine release 3 August 2026</span></span></div>
