@@ -1,11 +1,17 @@
-<!-- AUTO-GENERATED changelog fragment. Source registries: engine-changelog.json sha256 71ab0b3b3f8f3b6134e046eb08b39e34882cc7e6c6af72871ba5567ca2893d2d | corrections-register.json sha256 47a0ff47fb3c14b44ee3302f9edd9256e9cee6d89eae575bf8ab44aa62e6aec0 -->
-<div data-changelog-fragment data-generated-at="2026-08-08T00:00:00+08:00">
-<p class="ic-disclaimer" data-role="changelog-asat">This log was generated on 2026-08-08 from the verification registries. Release checks block a figure-affecting change that lacks an entry.</p>
+<!-- AUTO-GENERATED changelog fragment. Source registries: engine-changelog.json sha256 720d2e88827d7c65b4e0416d497a8832154aa17c338bf67769067b041fbae4c4 | corrections-register.json sha256 47a0ff47fb3c14b44ee3302f9edd9256e9cee6d89eae575bf8ab44aa62e6aec0 -->
+<div data-changelog-fragment data-generated-at="2026-08-09T00:00:00+08:00">
+<p class="ic-disclaimer" data-role="changelog-asat">This log was generated on 2026-08-09 from the verification registries. Release checks block a figure-affecting change that lacks an entry.</p>
 
     <div class="ic-pub" id="engine-changelog">
       <div class="ic-pub-head">
         <div><h3>Engine changelog</h3><p>Figure-affecting engine changes, recorded at release</p></div>
-        <span class="ic-pub-count">32 entries</span>
+        <span class="ic-pub-count">33 entries</span>
+      </div>
+      <div class="ic-anchor" id="changelog-e-33">
+        <div class="ic-anchor-head"><span class="ic-anchor-title">E-33 &middot; 2026-08-09</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="When this engine release shipped.">engine release 9 August 2026</span></span></div>
+        <div class="ic-anchor-class">Affected: Leases that end part-way through a month, where the closing period was charged a whole month of interest</div>
+        <p class="ic-src-cite">A lease that ends part-way through a month is now measured to the day. The final part-month is charged interest for the days it actually runs, instead of a whole month. Depreciation already ran to the real end date, so the two sides of the workbook now agree with each other. Any saved lease ending part-way through a month should be recalculated.</p>
+        <p class="ic-no-run">Where a lease ended part-way through a month, the closing period was charged a full month of interest even though the schedule printed a span of only part of a month, while depreciation for that same period was already measured to the day. The workbook therefore disagreed with itself. On a five year lease ending on the fifteenth, the final depreciation charge was four thousand four hundred and twenty eight where a whole month would have been eight thousand seven hundred and seventy five, yet the interest for that part month was charged as though a whole month had run. The standard requires interest that produces a constant periodic rate on the remaining balance, and a whole month of interest across a part month is a higher rate for that period, so the previous treatment did not meet the requirement it was applying. The final part month is now measured on the days it actually runs. On the lease described, the opening liability moves from four hundred and seventy three thousand eight hundred and fifty three point five seven to four hundred and seventy three thousand eight hundred and seventy two point two eight, and the interest charged on the final part month falls from forty eight point four four to twenty four point two five. Depreciation does not move; the liability side now meets it. Leases ending the day before a monthly anniversary are unaffected, and leases ending on a yearly anniversary are unaffected, both verified by re-running them and confirming every figure identical to the last decimal place. Quarterly and annual payment patterns are unaffected, because the change applies to the monthly measurement grid only. ANY SAVED LEASE ENDING PART-WAY THROUGH A MONTH SHOULD BE RECALCULATED.</p>
       </div>
       <div class="ic-anchor" id="changelog-e-32">
         <div class="ic-anchor-head"><span class="ic-anchor-title">E-32 &middot; 2026-08-08</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="When this engine release shipped.">engine release 8 August 2026</span></span></div>
