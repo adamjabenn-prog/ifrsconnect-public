@@ -1,11 +1,17 @@
-<!-- AUTO-GENERATED changelog fragment. Source registries: engine-changelog.json sha256 f5da1c7bfdb292262449d19e206c2b01d4ef2b78d3bd2baf85270759c445b593 | corrections-register.json sha256 008a9d2c702db08e559086ec841637a598e7e5dbbb6c25cb9c4ac8180ecc971b -->
-<div data-changelog-fragment data-generated-at="2026-08-06T00:00:00+08:00">
-<p class="ic-disclaimer" data-role="changelog-asat">This log was generated on 2026-08-06 from the verification registries. Release checks block a figure-affecting change that lacks an entry.</p>
+<!-- AUTO-GENERATED changelog fragment. Source registries: engine-changelog.json sha256 e946a1f1e2f4e2819e9c9ff29237790c8be0a0e3f49544833acdd2fd7fa8d04f | corrections-register.json sha256 008a9d2c702db08e559086ec841637a598e7e5dbbb6c25cb9c4ac8180ecc971b -->
+<div data-changelog-fragment data-generated-at="2026-08-08T00:00:00+08:00">
+<p class="ic-disclaimer" data-role="changelog-asat">This log was generated on 2026-08-08 from the verification registries. Release checks block a figure-affecting change that lacks an entry.</p>
 
     <div class="ic-pub" id="engine-changelog">
       <div class="ic-pub-head">
         <div><h3>Engine changelog</h3><p>Figure-affecting engine changes, recorded at release</p></div>
-        <span class="ic-pub-count">31 entries</span>
+        <span class="ic-pub-count">32 entries</span>
+      </div>
+      <div class="ic-anchor" id="changelog-e-32">
+        <div class="ic-anchor-head"><span class="ic-anchor-title">E-32 &middot; 2026-08-08</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="When this engine release shipped.">engine release 8 August 2026</span></span></div>
+        <div class="ic-anchor-class">Affected: Short-term and low-value exempt leases, whose straight-line expense figures were produced and then cleared instead of shown</div>
+        <p class="ic-src-cite">A lease claiming the short-term or low-value exemption now shows its straight-line expense figures on screen, in the saved record and in the workbook. Before this change the calculator worked those figures out correctly and then discarded them, so the amount the standard requires a preparer to disclose was never visible. How the expense is worked out has not changed.</p>
+        <p class="ic-no-run">Where the short-term or low-value exemption is elected, the payments are recognised as an expense on a straight-line basis over the lease term under IFRS 16.6, and IFRS 16.53 requires that expense to be disclosed. The calculator produced the figures and then cleared them before they reached the screen, the saved record or the workbook, so the preparer could not read the number they were required to report. The figures are now published. The note asking the preparer to confirm the exemption still has to be acknowledged before a workbook can be produced, and the workbook is still withheld until it is. A worked check on a twelve month lease paying five thousand a month in arrears gives twelve equal periods of five thousand and a total of sixty thousand, with the set-up costs and the termination penalty correctly excluded, because neither is a lease payment under the exemption and the term does not reflect exercising an option to terminate. Separately, a calculation for a lease with no changes and no reviews recorded against it no longer carries two empty placeholder sections in its saved record. Every figure, schedule, journal and report is unchanged by that, and only the workbook built-in integrity fingerprint reflects the slimmer saved data, so no saved lease is marked as affected by it.</p>
       </div>
       <div class="ic-anchor" id="changelog-e-31">
         <div class="ic-anchor-head"><span class="ic-anchor-title">E-31 &middot; 2026-08-06</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="When this engine release shipped.">engine release 6 August 2026</span></span></div>
