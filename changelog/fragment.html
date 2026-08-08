@@ -1,11 +1,17 @@
-<!-- AUTO-GENERATED changelog fragment. Source registries: engine-changelog.json sha256 720d2e88827d7c65b4e0416d497a8832154aa17c338bf67769067b041fbae4c4 | corrections-register.json sha256 47a0ff47fb3c14b44ee3302f9edd9256e9cee6d89eae575bf8ab44aa62e6aec0 -->
+<!-- AUTO-GENERATED changelog fragment. Source registries: engine-changelog.json sha256 20666c4d778e7bbfc935433e7d7a4dfa88ddae53e0573508237545e948b37586 | corrections-register.json sha256 47a0ff47fb3c14b44ee3302f9edd9256e9cee6d89eae575bf8ab44aa62e6aec0 -->
 <div data-changelog-fragment data-generated-at="2026-08-09T00:00:00+08:00">
 <p class="ic-disclaimer" data-role="changelog-asat">This log was generated on 2026-08-09 from the verification registries. Release checks block a figure-affecting change that lacks an entry.</p>
 
     <div class="ic-pub" id="engine-changelog">
       <div class="ic-pub-head">
         <div><h3>Engine changelog</h3><p>Figure-affecting engine changes, recorded at release</p></div>
-        <span class="ic-pub-count">33 entries</span>
+        <span class="ic-pub-count">34 entries</span>
+      </div>
+      <div class="ic-anchor" id="changelog-e-34">
+        <div class="ic-anchor-head"><span class="ic-anchor-title">E-34 &middot; 2026-08-09</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="When this engine release shipped.">engine release 9 August 2026</span></span></div>
+        <div class="ic-anchor-class">Affected: Leases that end part-way through a month and are later extended, where the join between the old and new term was charged too much interest</div>
+        <p class="ic-src-cite">Extending a lease that ends part-way through a month charged too much interest at the join between the old term and the new one. The join is now measured to the day, like the rest of the schedule. Any saved lease that ends part-way through a month and has since been extended should be recalculated.</p>
+        <p class="ic-no-run">Where a lease ends part-way through a month and is later extended, the calculation joins the schedule it has already run to the new one it needs to build. At that join it was charging a whole month for a part month, and charging one month twice, so the join accrued almost half a month more than it should. On a large lease the excess reached the tens of thousands. The earlier correction in this release, which measures the final part month to the day, reduced the excess by roughly half but did not remove it, because an extension does not rebuild the schedule from the beginning; it splices. The join now carries its own share of a month, calculated the same way the calculation already splits a period at a date. Verified on every route by which a lease can be extended, and on a lease whose new end is itself part-way through a month: the join now totals exactly one month in each case, and the closing figures reproduce an independent day-by-day calculation to the cent. A lease that ends cleanly on a month boundary is unchanged, verified by comparing every figure. ANY SAVED LEASE THAT ENDS PART-WAY THROUGH A MONTH AND HAS BEEN EXTENDED SHOULD BE RECALCULATED.</p>
       </div>
       <div class="ic-anchor" id="changelog-e-33">
         <div class="ic-anchor-head"><span class="ic-anchor-title">E-33 &middot; 2026-08-09</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="When this engine release shipped.">engine release 9 August 2026</span></span></div>
