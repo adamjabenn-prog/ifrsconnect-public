@@ -1,11 +1,17 @@
-<!-- AUTO-GENERATED changelog fragment. Source registries: engine-changelog.json sha256 20666c4d778e7bbfc935433e7d7a4dfa88ddae53e0573508237545e948b37586 | corrections-register.json sha256 47a0ff47fb3c14b44ee3302f9edd9256e9cee6d89eae575bf8ab44aa62e6aec0 -->
+<!-- AUTO-GENERATED changelog fragment. Source registries: engine-changelog.json sha256 19c57daed4385259046e0cd232d2b1ba27228278d49d8a74ba5edf2e96b73d6f | corrections-register.json sha256 47a0ff47fb3c14b44ee3302f9edd9256e9cee6d89eae575bf8ab44aa62e6aec0 -->
 <div data-changelog-fragment data-generated-at="2026-08-09T00:00:00+08:00">
 <p class="ic-disclaimer" data-role="changelog-asat">This log was generated on 2026-08-09 from the verification registries. Release checks block a figure-affecting change that lacks an entry.</p>
 
     <div class="ic-pub" id="engine-changelog">
       <div class="ic-pub-head">
         <div><h3>Engine changelog</h3><p>Figure-affecting engine changes, recorded at release</p></div>
-        <span class="ic-pub-count">34 entries</span>
+        <span class="ic-pub-count">35 entries</span>
+      </div>
+      <div class="ic-anchor" id="changelog-e-35">
+        <div class="ic-anchor-head"><span class="ic-anchor-title">E-35 &middot; 2026-08-09</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="When this engine release shipped.">engine release 9 August 2026</span></span></div>
+        <div class="ic-anchor-class">Affected: Leases with a make-good obligation whose provision rate was typed with a trailing zero, or as a small rate beginning with a zero, and were refused</div>
+        <p class="ic-src-cite">A make-good provision rate written with a trailing zero, such as five point seven five zero, was refused as if it could have meant something a thousand times larger. It could not. Those rates are now accepted and the make-good obligation stays in the right-of-use asset. Any lease that was refused for this reason should be calculated again.</p>
+        <p class="ic-no-run">A make-good provision rate typed with a trailing zero was treated as though it might be a figure written with a thousands separator, and the whole lease was refused with a message telling the preparer to correct something that was already correct. On a five year lease with a make-good obligation of one hundred and twenty thousand, the right-of-use asset opened ninety thousand seven hundred and thirty five point nine four lower, because the entire obligation dropped out of the measurement. Small rates written with a leading zero were refused the same way. The question was settled exhaustively rather than by sampling: across every string the pattern could match, not one has two readings a preparer could have meant, because a thousands separator never produces a group beginning with a zero and the larger reading is only a candidate while it is still a plausible rate. The same check still applies to an index figure, where both readings are genuinely possible and tens of thousands of real cases exist. In the same change, forms that DO produce a rate a thousand times too large, such as a figure written in exponent form or with a space where a separator belongs, are now refused, having previously been accepted without comment. ANY LEASE REFUSED FOR THIS REASON SHOULD BE CALCULATED AGAIN.</p>
       </div>
       <div class="ic-anchor" id="changelog-e-34">
         <div class="ic-anchor-head"><span class="ic-anchor-title">E-34 &middot; 2026-08-09</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="When this engine release shipped.">engine release 9 August 2026</span></span></div>
