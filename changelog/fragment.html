@@ -1,11 +1,25 @@
-<!-- AUTO-GENERATED changelog fragment. Source registries: engine-changelog.json sha256 8d8146c907ca510a1b878bf699c1671cb36eb9824bcffc0b45661a0753fe6129 | corrections-register.json sha256 17f0be22f895cefb489eb17bb54a0969dfc56fc0cafc8bc8614976c25422811c -->
+<!-- AUTO-GENERATED changelog fragment. Source registries: engine-changelog.json sha256 1fd603e253dd08d2261ff368d5e893273de86fd50e9951fee63c87245598f671 | corrections-register.json sha256 17f0be22f895cefb489eb17bb54a0969dfc56fc0cafc8bc8614976c25422811c -->
 <div data-changelog-fragment data-generated-at="2026-08-10T00:00:00+08:00">
 <p class="ic-disclaimer" data-role="changelog-asat">This log was generated on 2026-08-10 from the verification registries. Release checks block a figure-affecting change that lacks an entry.</p>
 
     <div class="ic-pub" id="engine-changelog">
       <div class="ic-pub-head">
         <div><h3>Engine changelog</h3><p>Figure-affecting engine changes, recorded at release</p></div>
-        <span class="ic-pub-count">48 entries</span>
+        <span class="ic-pub-count">49 entries</span>
+      </div>
+      <div class="ic-anchor" id="changelog-e-49">
+        <div class="ic-anchor-head"><span class="ic-anchor-title">E-49 &middot; 2026-08-10</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="When this engine release shipped.">engine release 10 August 2026</span></span></div>
+        <div class="ic-anchor-class">Affected: Leases where a make-good or restoration estimate was revised during the lease AND an index or rent review takes effect around the same time. The liability moved for the review but no journal entry explained the movement, and the right-of-use asset did not move with it. Figures change: the journal now posts and the asset now steps with the liability.</div>
+        <p class="ic-src-cite">Where a make-good estimate is revised and an index or rent review takes effect nearby, the review now posts its journal entry and the right-of-use asset moves with the liability.</p>
+        <p class="ic-no-run">This changes figures on the leases described above. If you hold one, re-open it and take the new schedule.
+
+When a lease had both a revised make-good estimate and an index or rent review, the liability stepped for the review but nothing in the journals explained the step, and the asset did not move with it. Posted to a ledger, the accounts came up short against the schedule printed in the same workbook, and the asset was understated by the same amount.
+
+The rule now applied is direct: a review is treated as already absorbed only where the change re-prices the rent itself, because in that case the rebuilt payments already carry the uplift. A change to a make-good estimate does not touch the rent. It is added to the cost of the asset under IFRS 16.24(d), so the review still takes effect on its own date under IFRS 16.42(b), with the matching adjustment to the asset required by IFRS 16.39.
+
+Where a change does re-price the rent, nothing moves: those leases already posted one correct entry and still do.
+
+The same correction also covers leases on quarterly and annual rents that carried this fault for longer, where the review took effect in a period after the change was made.</p>
       </div>
       <div class="ic-anchor" id="changelog-e-48">
         <div class="ic-anchor-head"><span class="ic-anchor-title">E-48 &middot; 2026-08-10</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="When this engine release shipped.">engine release 10 August 2026</span></span></div>
