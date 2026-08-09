@@ -1,11 +1,27 @@
-<!-- AUTO-GENERATED changelog fragment. Source registries: engine-changelog.json sha256 f2944d437698d1452f5e748cb97f70c15009ab3b483ed9ea988036cce93c3666 | corrections-register.json sha256 3ae664b5839708b9c36862139f72a82ad1acccc954bde21c52f793b53259aaea -->
+<!-- AUTO-GENERATED changelog fragment. Source registries: engine-changelog.json sha256 522caefcbed62be73ecdc0b8bf308e34cdb7e3ea5349080f32f26b77dc960897 | corrections-register.json sha256 3ae664b5839708b9c36862139f72a82ad1acccc954bde21c52f793b53259aaea -->
 <div data-changelog-fragment data-generated-at="2026-08-09T00:00:00+08:00">
 <p class="ic-disclaimer" data-role="changelog-asat">This log was generated on 2026-08-09 from the verification registries. Release checks block a figure-affecting change that lacks an entry.</p>
 
     <div class="ic-pub" id="engine-changelog">
       <div class="ic-pub-head">
         <div><h3>Engine changelog</h3><p>Figure-affecting engine changes, recorded at release</p></div>
-        <span class="ic-pub-count">42 entries</span>
+        <span class="ic-pub-count">43 entries</span>
+      </div>
+      <div class="ic-anchor" id="changelog-e-43">
+        <div class="ic-anchor-head"><span class="ic-anchor-title">E-43 &middot; 2026-08-09</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="When this engine release shipped.">engine release 9 August 2026</span></span></div>
+        <div class="ic-anchor-class">Affected: Leases shortened by a negotiated change where the tenant also pays a one-off fee to get out early, and that fee was not written into the original lease</div>
+        <p class="ic-src-cite">You can now record a one-off exit fee agreed when a lease is shortened by negotiation. Nothing you have already calculated changes.</p>
+        <p class="ic-no-run">Until now there was nowhere to put it. If you and your landlord agreed to end a lease early and you paid a one-off fee that your original lease never mentioned, the calculator had no box for it. The natural place to try was the early-exit penalty box, and that was refused.
+
+Worse, the refusal told you to remove the fee. On one lease that quietly took an obligation of a hundred and ten thousand out of the figures, and the calculator was the thing suggesting it. That wording is gone across the calculator and the exported workbook, and it now says to keep a fee you genuinely owe.
+
+The fee now goes on the change row itself, with the date it is payable. It joins the revised payments for the shortened lease and is discounted at the revised rate, and the usual gain or loss on giving up part of the lease is worked out first and is unchanged (IFRS 16.45, IFRS 16.46). The result matches a published worked example for a negotiated break fee.
+
+A fee your original lease already contained is a different thing and still belongs in the leaving-early section, so the calculator asks which one you have rather than guessing.
+
+Nothing you have saved is affected. No saved lease can carry this input, because until today it could not be entered at all.
+
+A few combinations are not supported yet and the calculator says so plainly instead of producing a figure: a fee alongside handing back part of the space, a fee on a lease that already has one, a fee combined with another change on the same day, and a later reassessment of a lease that carries a fee.</p>
       </div>
       <div class="ic-anchor" id="changelog-e-42">
         <div class="ic-anchor-head"><span class="ic-anchor-title">E-42 &middot; 2026-08-09</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="When this engine release shipped.">engine release 9 August 2026</span></span></div>
