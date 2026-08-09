@@ -1,11 +1,23 @@
-<!-- AUTO-GENERATED changelog fragment. Source registries: engine-changelog.json sha256 087342dc971eb93b9986979898c7856ae07ee941879fa1d6c88417424c18cdbe | corrections-register.json sha256 3ae664b5839708b9c36862139f72a82ad1acccc954bde21c52f793b53259aaea -->
+<!-- AUTO-GENERATED changelog fragment. Source registries: engine-changelog.json sha256 f2944d437698d1452f5e748cb97f70c15009ab3b483ed9ea988036cce93c3666 | corrections-register.json sha256 3ae664b5839708b9c36862139f72a82ad1acccc954bde21c52f793b53259aaea -->
 <div data-changelog-fragment data-generated-at="2026-08-09T00:00:00+08:00">
 <p class="ic-disclaimer" data-role="changelog-asat">This log was generated on 2026-08-09 from the verification registries. Release checks block a figure-affecting change that lacks an entry.</p>
 
     <div class="ic-pub" id="engine-changelog">
       <div class="ic-pub-head">
         <div><h3>Engine changelog</h3><p>Figure-affecting engine changes, recorded at release</p></div>
-        <span class="ic-pub-count">41 entries</span>
+        <span class="ic-pub-count">42 entries</span>
+      </div>
+      <div class="ic-anchor" id="changelog-e-42">
+        <div class="ic-anchor-head"><span class="ic-anchor-title">E-42 &middot; 2026-08-09</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="When this engine release shipped.">engine release 9 August 2026</span></span></div>
+        <div class="ic-anchor-class">Affected: Leases where you hand back part of the space and an index review falls on the same day, and the rent you type for the reduced space happens to equal the rent for the space you had before - the calculator can no longer tell which you meant, and now says so instead of choosing silently</div>
+        <p class="ic-src-cite">Where a rent you type could mean two different things, the calculator now tells you rather than picking one. No figure changes.</p>
+        <p class="ic-no-run">Nothing you have calculated moves. This adds a note where there was silence.
+
+If you hand back part of your space and an index review falls on the same day, the rent you type could mean two different things: the rent for the space you are keeping, or the old rent carried forward for the calculator to scale down itself. Where those two happen to produce the same number, we used to guess, and an earlier change removed the guess without telling anyone it had gone.
+
+On one lease the difference between the two readings is a hundred and eighty-one thousand of cash over the term, and until now the calculator produced one of them in silence. It now raises a note asking you to confirm which you meant.
+
+It is a note, not a refusal. Your figures still calculate and you can still export. It appears only where the two readings genuinely collide - if you state the rent for the reduced space, or the amount differs from the old rent by even a cent, or nothing else happens on that date, you will not see it.</p>
       </div>
       <div class="ic-anchor" id="changelog-e-41">
         <div class="ic-anchor-head"><span class="ic-anchor-title">E-41 &middot; 2026-08-09</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="When this engine release shipped.">engine release 9 August 2026</span></span></div>
