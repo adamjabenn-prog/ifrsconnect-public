@@ -1,11 +1,23 @@
-<!-- AUTO-GENERATED changelog fragment. Source registries: engine-changelog.json sha256 6e6a48ee2a7a683a7ffa4719ada7a9f50de1f5888797390bc25bff1cb30136e6 | corrections-register.json sha256 17f0be22f895cefb489eb17bb54a0969dfc56fc0cafc8bc8614976c25422811c -->
+<!-- AUTO-GENERATED changelog fragment. Source registries: engine-changelog.json sha256 8d8146c907ca510a1b878bf699c1671cb36eb9824bcffc0b45661a0753fe6129 | corrections-register.json sha256 17f0be22f895cefb489eb17bb54a0969dfc56fc0cafc8bc8614976c25422811c -->
 <div data-changelog-fragment data-generated-at="2026-08-10T00:00:00+08:00">
 <p class="ic-disclaimer" data-role="changelog-asat">This log was generated on 2026-08-10 from the verification registries. Release checks block a figure-affecting change that lacks an entry.</p>
 
     <div class="ic-pub" id="engine-changelog">
       <div class="ic-pub-head">
         <div><h3>Engine changelog</h3><p>Figure-affecting engine changes, recorded at release</p></div>
-        <span class="ic-pub-count">47 entries</span>
+        <span class="ic-pub-count">48 entries</span>
+      </div>
+      <div class="ic-anchor" id="changelog-e-48">
+        <div class="ic-anchor-head"><span class="ic-anchor-title">E-48 &middot; 2026-08-10</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="When this engine release shipped.">engine release 10 August 2026</span></span></div>
+        <div class="ic-anchor-class">Affected: Leases with an index or rent review dated part-way through a rent period. The note beside them stated the wrong month; every figure was and remains correct. Nothing you have calculated changes.</div>
+        <p class="ic-src-cite">Where a rent review falls part-way through a rent period, we now tell you the right month the new rent starts. No figure changes.</p>
+        <p class="ic-no-run">Nothing you have calculated moves. Your schedules were right; the sentence describing them was not.
+
+If you entered a rent review dated part-way through a rent period, the note beside it named the date of the review rather than the date your rent actually changes. On a monthly lease that was a month out. On a quarterly lease it was a full quarter: the note said the end of September when the first payment at the new rent is the end of December. The schedule always showed the correct payment, so the two disagreed with each other in the same file.
+
+Three other things are fixed with it. A review dated exactly on a payment date used to produce no note at all, even though the rent still first changes in the following period. The wording said "higher rent", which read as wrong when an index went down. And the heading on the note said the same thing.
+
+The date is now worked out once, by the calculator, and printed unchanged on screen and in the workbook. They cannot disagree again.</p>
       </div>
       <div class="ic-anchor" id="changelog-e-47">
         <div class="ic-anchor-head"><span class="ic-anchor-title">E-47 &middot; 2026-08-10</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="When this engine release shipped.">engine release 10 August 2026</span></span></div>
