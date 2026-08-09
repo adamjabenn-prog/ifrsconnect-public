@@ -1,11 +1,25 @@
-<!-- AUTO-GENERATED changelog fragment. Source registries: engine-changelog.json sha256 4af264f7774cd48d8a0757566d00153c3e9b0d323a8057fc97e5f9529f39a53c | corrections-register.json sha256 3ae664b5839708b9c36862139f72a82ad1acccc954bde21c52f793b53259aaea -->
+<!-- AUTO-GENERATED changelog fragment. Source registries: engine-changelog.json sha256 6968cf3d65abacf6c254a7bbde95471b4ec7eb4dee2fcb89ae08b7301d634f0d | corrections-register.json sha256 3ae664b5839708b9c36862139f72a82ad1acccc954bde21c52f793b53259aaea -->
 <div data-changelog-fragment data-generated-at="2026-08-09T00:00:00+08:00">
 <p class="ic-disclaimer" data-role="changelog-asat">This log was generated on 2026-08-09 from the verification registries. Release checks block a figure-affecting change that lacks an entry.</p>
 
     <div class="ic-pub" id="engine-changelog">
       <div class="ic-pub-head">
         <div><h3>Engine changelog</h3><p>Figure-affecting engine changes, recorded at release</p></div>
-        <span class="ic-pub-count">38 entries</span>
+        <span class="ic-pub-count">39 entries</span>
+      </div>
+      <div class="ic-anchor" id="changelog-e-39">
+        <div class="ic-anchor-head"><span class="ic-anchor-title">E-39 &middot; 2026-08-09</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="When this engine release shipped.">engine release 9 August 2026</span></span></div>
+        <div class="ic-anchor-class">Affected: Leases where a discount rate was typed outside a sensible range - a negative rate, or one above one hundred per cent - which the calculator accepted in silence and which the exported workbook did not mention at all; Leases with a make-good obligation where the rate for it was written in a form that can be read two ways, such as a figure with a space in it or one written in scientific notation, which the make-good boxes accepted without comment while the lease rate boxes queried it</div>
+        <p class="ic-src-cite">A discount rate outside a sensible range, or written in a form that can be read two ways, is now named on every rate box and in the exported workbook. No figure changes.</p>
+        <p class="ic-no-run">Nothing you have already calculated moves. This changes only what the calculator SAYS, and it says it in the one place that was silent before.
+
+A rate typed as a negative number, or above one hundred per cent, was accepted without comment and the exported workbook said nothing about it. On one test lease a rate of minus six per cent opened the liability about a third higher than the same lease at a sensible rate, with no warning anywhere in the file an auditor would read. The figure was never invented - the calculator did exactly what the rate said - but a reviewer had no way to see that the rate itself was the problem.
+
+The make-good rate boxes were quieter still. A figure written with a space in it, or in scientific notation, was queried on the lease rate boxes and accepted in silence on the make-good ones. On a make-good obligation of one hundred and twenty thousand, one of those forms left nothing of it at all in the right-of-use asset - the same answer as a lease with no make-good obligation. IFRS 16 paragraph 24(d) requires that estimate to sit in the cost of the asset, so a silent zero there is a real loss.
+
+Underneath both was one gap worth stating: a note raised while you type reaches the screen and stops there, and only an issue raised by the calculation itself reaches the signed workbook. The rate checks now run in both places, so what you see on screen and what an auditor reads in the file agree.
+
+None of these are refusals. The calculator still produces the figures and still lets you proceed; it simply no longer stays quiet about a rate that is very unlikely to be what you meant.</p>
       </div>
       <div class="ic-anchor" id="changelog-e-38">
         <div class="ic-anchor-head"><span class="ic-anchor-title">E-38 &middot; 2026-08-09</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="When this engine release shipped.">engine release 9 August 2026</span></span></div>
