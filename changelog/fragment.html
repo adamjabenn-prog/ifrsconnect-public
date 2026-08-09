@@ -1,11 +1,23 @@
-<!-- AUTO-GENERATED changelog fragment. Source registries: engine-changelog.json sha256 06543a484c926a9f3a3e2ba0b29abb297d0b55c81766bed93d4deb94bf15d7ef | corrections-register.json sha256 47a0ff47fb3c14b44ee3302f9edd9256e9cee6d89eae575bf8ab44aa62e6aec0 -->
+<!-- AUTO-GENERATED changelog fragment. Source registries: engine-changelog.json sha256 3a43be659e8cf959b5fc2b44f5eed3bc2076a8957016c2a4e3bad1bdb2d0e681 | corrections-register.json sha256 47a0ff47fb3c14b44ee3302f9edd9256e9cee6d89eae575bf8ab44aa62e6aec0 -->
 <div data-changelog-fragment data-generated-at="2026-08-09T00:00:00+08:00">
 <p class="ic-disclaimer" data-role="changelog-asat">This log was generated on 2026-08-09 from the verification registries. Release checks block a figure-affecting change that lacks an entry.</p>
 
     <div class="ic-pub" id="engine-changelog">
       <div class="ic-pub-head">
         <div><h3>Engine changelog</h3><p>Figure-affecting engine changes, recorded at release</p></div>
-        <span class="ic-pub-count">37 entries</span>
+        <span class="ic-pub-count">38 entries</span>
+      </div>
+      <div class="ic-anchor" id="changelog-e-38">
+        <div class="ic-anchor-head"><span class="ic-anchor-title">E-38 &middot; 2026-08-09</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="When this engine release shipped.">engine release 9 August 2026</span></span></div>
+        <div class="ic-anchor-class">Affected: Leases with a make-good obligation payable at the end where the term is later shortened or extended - the calculator refused to produce the lease at all, and there was no way to supply the rate it was asking for; Leases with a make-good obligation payable at the end, measured before this change - the provision was discounted at the lease borrowing rate rather than the rate you entered for it, so the same figure was produced whatever rate you typed; Leases where the term is extended and a make-good obligation is released as a result - the release may now be larger than the remaining asset, in which case the excess is taken to profit or loss</div>
+        <p class="ic-src-cite">A lease with make-good payable at the end can now be shortened or extended, and the provision is measured using the rate you enter for it rather than the lease borrowing rate.</p>
+        <p class="ic-no-run">Until now, changing the term of a lease that carries a make-good obligation payable at the end was refused outright, and the message pointed to a route that could not accept the rate either. There was no value a preparer could enter to get past it. That is fixed: the rate you enter for the make-good provision is now read on this route, kept when the lease is saved and reloaded, and used to measure the obligation.
+
+This also corrects the figure itself. Before this change the provision was discounted at the lease borrowing rate, so a preparer who entered one per cent, five per cent or nine per cent for the make-good obligation received the same answer every time. IAS 37 paragraph 47 requires a pre-tax rate reflecting current market assessments of the time value of money and the risks specific to that obligation, which is not the rate at which the entity borrows. Your figure will change if the rate you entered differs from the lease rate, and the calculator will tell you if a saved lease is affected.
+
+Provisions are reviewed and adjusted to the current best estimate under IAS 37 paragraph 59, and that applies whether the term gets shorter or longer, so an extension now remeasures the obligation as well as a shortening. Where extending the term releases more provision than remains in the right-of-use asset, the asset is reduced to zero and the excess is taken to profit or loss, following IFRS 16 paragraph 39.
+
+One judgement is stated here rather than left implicit: on an extension the calculator treats being reasonably certain of staying longer as evidence that the make-good date has moved, which releases provision. That is the ordinary reading and it follows the lease term, but it is an expectation rather than a contracted fact, so review it against your own assessment.</p>
       </div>
       <div class="ic-anchor" id="changelog-e-37">
         <div class="ic-anchor-head"><span class="ic-anchor-title">E-37 &middot; 2026-08-09</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="When this engine release shipped.">engine release 9 August 2026</span></span></div>
