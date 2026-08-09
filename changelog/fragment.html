@@ -1,11 +1,25 @@
-<!-- AUTO-GENERATED changelog fragment. Source registries: engine-changelog.json sha256 522caefcbed62be73ecdc0b8bf308e34cdb7e3ea5349080f32f26b77dc960897 | corrections-register.json sha256 3ae664b5839708b9c36862139f72a82ad1acccc954bde21c52f793b53259aaea -->
+<!-- AUTO-GENERATED changelog fragment. Source registries: engine-changelog.json sha256 82e51899c175e5c965909a03466f16b985d0989303a2883cc57003d5b1b0811b | corrections-register.json sha256 3ae664b5839708b9c36862139f72a82ad1acccc954bde21c52f793b53259aaea -->
 <div data-changelog-fragment data-generated-at="2026-08-09T00:00:00+08:00">
 <p class="ic-disclaimer" data-role="changelog-asat">This log was generated on 2026-08-09 from the verification registries. Release checks block a figure-affecting change that lacks an entry.</p>
 
     <div class="ic-pub" id="engine-changelog">
       <div class="ic-pub-head">
         <div><h3>Engine changelog</h3><p>Figure-affecting engine changes, recorded at release</p></div>
-        <span class="ic-pub-count">43 entries</span>
+        <span class="ic-pub-count">44 entries</span>
+      </div>
+      <div class="ic-anchor" id="changelog-e-44">
+        <div class="ic-anchor-head"><span class="ic-anchor-title">E-44 &middot; 2026-08-09</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="When this engine release shipped.">engine release 9 August 2026</span></span></div>
+        <div class="ic-anchor-class">Affected: Leases carrying a scope increase with a changed rent where nobody has said whether the addition is a separate lease. No saved schedule changes, and no lease entered through the calculator is affected, because the calculator has always supplied that assessment.</div>
+        <p class="ic-src-cite">A scope increase that has not been assessed as a separate lease can no longer produce a schedule. The calculation stops and asks for that assessment instead of quietly leaving the change out.</p>
+        <p class="ic-no-run">When you add to what you are leasing and the rent changes, there are two very different answers, and only your contract decides which one is right. If the extra space or equipment is genuinely separate and you are paying about what it would cost on its own, it is a new lease. If it is not, it is a change to the lease you already have and the whole thing is remeasured.
+
+The calculator cannot read your contract, so it cannot make that call for you. Until now, if a scope increase arrived without that assessment, the calculator captured it, flagged it for review, and carried on with the old rent. The figures it produced were the figures for the lease before the change, while the summary of what you had entered showed the new rent. Two answers in one file.
+
+Now the calculation stops and asks. Nothing is reported until the question is answered, and the workbook is not produced at all. Answering it takes one click and the calculation runs as before.
+
+The two answers come from IFRS 16.44, which sets both tests that have to be met for an addition to be a separate lease, and IFRS 16.45, which covers everything that is not.
+
+No saved schedule changes, and no lease entered through the calculator is affected, because the calculator has always supplied that assessment. Nothing else moves.</p>
       </div>
       <div class="ic-anchor" id="changelog-e-43">
         <div class="ic-anchor-head"><span class="ic-anchor-title">E-43 &middot; 2026-08-09</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="When this engine release shipped.">engine release 9 August 2026</span></span></div>
