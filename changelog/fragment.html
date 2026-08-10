@@ -1,11 +1,25 @@
-<!-- AUTO-GENERATED changelog fragment. Source registries: engine-changelog.json sha256 9136c6e04647c75e38485c6463feef150443897bc4fb693476819cfc7f6009bc | corrections-register.json sha256 17f0be22f895cefb489eb17bb54a0969dfc56fc0cafc8bc8614976c25422811c -->
+<!-- AUTO-GENERATED changelog fragment. Source registries: engine-changelog.json sha256 ef6a663915ef7f7b8d86e974ce5a531119155ee36d3fbf2aafff18171cd3496c | corrections-register.json sha256 17f0be22f895cefb489eb17bb54a0969dfc56fc0cafc8bc8614976c25422811c -->
 <div data-changelog-fragment data-generated-at="2026-08-10T00:00:00+08:00">
 <p class="ic-disclaimer" data-role="changelog-asat">This log was generated on 2026-08-10 from the verification registries. Release checks block a figure-affecting change that lacks an entry.</p>
 
     <div class="ic-pub" id="engine-changelog">
       <div class="ic-pub-head">
         <div><h3>Engine changelog</h3><p>Figure-affecting engine changes, recorded at release</p></div>
-        <span class="ic-pub-count">50 entries</span>
+        <span class="ic-pub-count">51 entries</span>
+      </div>
+      <div class="ic-anchor" id="changelog-e-51">
+        <div class="ic-anchor-head"><span class="ic-anchor-title">E-51 &middot; 2026-08-10</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="When this engine release shipped.">engine release 10 August 2026</span></span></div>
+        <div class="ic-anchor-class">Affected: Leases where a review linked to an index, and a change to the rent, both take effect at the same point. The schedule was right. The journal left out the index part of that one movement.</div>
+        <p class="ic-src-cite">No schedule figure changes. Where an index review and a change to the rent take effect at the same point, the journal now shows both parts of the movement instead of only the second.</p>
+        <p class="ic-no-run">This corrects a missing journal entry. It does not change any measurement.
+
+On a lease where an index review and a change to the rent both took effect at the same point, the liability stepped once for the two of them together. The journal explained only the rent change. The index part of the same movement was missing, even though the schedule and the calculation trace both included it. Posting that journal would have left your ledger short of the schedule printed in the same workbook, by the amount of the index adjustment.
+
+The journal now shows both entries in the order they were measured, the index adjustment first and the rent change second, so the two together account for the whole movement. Your liability schedule, payments, interest and depreciation are unchanged.
+
+Two neighbouring cases are unaffected and stay as they were. An index review whose new rent is replaced before it ever takes effect is still left out, because it never reached your payments. An index review alongside a change to a make-good estimate is still shown separately.
+
+If you have a lease of this kind, recalculate it and export it again before you post the journals.</p>
       </div>
       <div class="ic-anchor" id="changelog-e-50">
         <div class="ic-anchor-head"><span class="ic-anchor-title">E-50 &middot; 2026-08-10</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="When this engine release shipped.">engine release 10 August 2026</span></span></div>
