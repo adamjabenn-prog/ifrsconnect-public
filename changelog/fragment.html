@@ -1,11 +1,23 @@
-<!-- AUTO-GENERATED changelog fragment. Source registries: engine-changelog.json sha256 1fd603e253dd08d2261ff368d5e893273de86fd50e9951fee63c87245598f671 | corrections-register.json sha256 17f0be22f895cefb489eb17bb54a0969dfc56fc0cafc8bc8614976c25422811c -->
+<!-- AUTO-GENERATED changelog fragment. Source registries: engine-changelog.json sha256 9136c6e04647c75e38485c6463feef150443897bc4fb693476819cfc7f6009bc | corrections-register.json sha256 17f0be22f895cefb489eb17bb54a0969dfc56fc0cafc8bc8614976c25422811c -->
 <div data-changelog-fragment data-generated-at="2026-08-10T00:00:00+08:00">
 <p class="ic-disclaimer" data-role="changelog-asat">This log was generated on 2026-08-10 from the verification registries. Release checks block a figure-affecting change that lacks an entry.</p>
 
     <div class="ic-pub" id="engine-changelog">
       <div class="ic-pub-head">
         <div><h3>Engine changelog</h3><p>Figure-affecting engine changes, recorded at release</p></div>
-        <span class="ic-pub-count">49 entries</span>
+        <span class="ic-pub-count">50 entries</span>
+      </div>
+      <div class="ic-anchor" id="changelog-e-50">
+        <div class="ic-anchor-head"><span class="ic-anchor-title">E-50 &middot; 2026-08-10</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="When this engine release shipped.">engine release 10 August 2026</span></span></div>
+        <div class="ic-anchor-class">Affected: Leases where a break option shortens the term AND a rent-free period, incentive or other amount falls due AFTER the new end date. The amount was still being counted, which pushed the liability and the right-of-use asset down, understated the total charge to profit or loss, and could show the final month receiving money instead of paying rent. Figures change on these leases.</div>
+        <p class="ic-src-cite">Where a break option shortens a lease, an incentive or rent-free amount falling due after the new end date is no longer counted, and you are told it has been left out.</p>
+        <p class="ic-no-run">This changes figures on the leases described above. If you hold one, re-open it and take the new schedule.
+
+When a break option ended a lease early, an incentive or rent-free amount scheduled for a date after the new end date was still being brought into the measurement. Because such an amount reduces what you owe, the liability and the right-of-use asset came out too low, and the total charged to profit or loss did not agree with the rent actually paid over the shortened term. On one lease the final month appeared to receive fifty thousand rather than pay rent, and a cash entry carried a date up to two years after the lease had ended.
+
+On exercising a break, the lease term is reassessed and the liability is remeasured over the revised term under IFRS 16.20 and IFRS 16.40, using the payments for that term. An amount falling due after the lease has ended is not a payment for the lease term, so it is excluded, with the corresponding adjustment to the asset under IFRS 16.39.
+
+The exclusion is now stated on screen rather than left for you to notice. Typing the same lease with the earlier end date and no break has always handled this correctly and is unchanged.</p>
       </div>
       <div class="ic-anchor" id="changelog-e-49">
         <div class="ic-anchor-head"><span class="ic-anchor-title">E-49 &middot; 2026-08-10</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="When this engine release shipped.">engine release 10 August 2026</span></span></div>
