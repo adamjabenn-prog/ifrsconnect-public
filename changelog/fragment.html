@@ -1,6 +1,6 @@
-<!-- AUTO-GENERATED changelog fragment. Source registries: engine-changelog.json sha256 6a7b5e47a50f05d2538adc9aa48ced533b9bb62cd0b2c0e36c14c83e36cd3ea9 | corrections-register.json sha256 85989e2d013871fac656c001cb9070dace5f5f2541d0682fe1296c9b62930fd4 -->
-<div data-changelog-fragment data-generated-at="2026-08-10T00:00:00+08:00">
-<p class="ic-disclaimer" data-role="changelog-asat">This log was generated on 2026-08-10 from the verification registries. Release checks block a figure-affecting change that lacks an entry.</p>
+<!-- AUTO-GENERATED changelog fragment. Source registries: engine-changelog.json sha256 6a7b5e47a50f05d2538adc9aa48ced533b9bb62cd0b2c0e36c14c83e36cd3ea9 | corrections-register.json sha256 92c4f69ee09356e9148629e006aa5ed23331ea5dc1ea53f3c8013b829a96b609 -->
+<div data-changelog-fragment data-generated-at="2026-08-11T00:00:00+08:00">
+<p class="ic-disclaimer" data-role="changelog-asat">This log was generated on 2026-08-11 from the verification registries. Release checks block a figure-affecting change that lacks an entry.</p>
 
     <div class="ic-pub" id="engine-changelog">
       <div class="ic-pub-head">
@@ -448,7 +448,21 @@ References: IFRS 16 paragraph 36, a lease liability is carried at amortised cost
     <div class="ic-pub" id="corrections-register">
       <div class="ic-pub-head">
         <div><h3>Corrections register</h3><p>Input-reading and display fixes that did not change the engine</p></div>
-        <span class="ic-pub-count">24 entries</span>
+        <span class="ic-pub-count">26 entries</span>
+      </div>
+      <div class="ic-anchor" id="correction-c-26">
+        <div class="ic-anchor-head"><span class="ic-anchor-title">C-26 &middot; 2026-08-11</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="This fix changed input reading or display only; the calculation engine and every saved schedule computed from identical inputs are unchanged.">no engine change</span></span></div>
+        <div class="ic-anchor-class">Where: Filtered Excel exports; Full Excel export</div>
+        <p class="ic-src-cite">A filtered workbook could number the same control differently from the full workbook because its numbers followed the rows left in that file. Filtered workbooks now keep the same control numbers as the full workbook, so the same check has the same reference in every export. No calculation or control result changes.</p>
+        <p class="ic-no-run"><strong>Affected input shape:</strong> A workbook containing only the liability, only the right-of-use asset or only the journals, compared with the full workbook for the same lease. <strong>Window:</strong> The exact start date is not known. The corrected exporter is local and has not yet been placed on the live calculator, so workbooks exported from the live site may still be affected.</p>
+        <p class="ic-no-run"><strong>What to check:</strong> After the corrected exporter is live, export again if you rely on control references across different workbook types. Figures and pass or fail results do not need recalculating.</p>
+      </div>
+      <div class="ic-anchor" id="correction-c-25">
+        <div class="ic-anchor-head"><span class="ic-anchor-title">C-25 &middot; 2026-08-11</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="This fix changed input reading or display only; the calculation engine and every saved schedule computed from identical inputs are unchanged.">no engine change</span></span></div>
+        <div class="ic-anchor-class">Where: Calculator modification inputs; Saved lease recalculation</div>
+        <p class="ic-src-cite">A new scope increase could start with No already selected. An older saved lease could also turn a missing answer into No when it was reopened. The calculator now asks whether the added right is a separate lease and holds the calculation until the preparer chooses Yes or No. Older explicit answers, including supported legacy wording, are kept. No saved figure changes, and nothing is recalculated behind anyone.</p>
+        <p class="ic-no-run"><strong>Affected input shape:</strong> A scope increase with no separate-lease answer, or an older saved answer held under a supported legacy field name or wording. <strong>Window:</strong> The exact start date is not known. The corrected build is local and has not yet been placed on the live calculator, so work created on the live site may still be affected.</p>
+        <p class="ic-no-run"><strong>What to check:</strong> After the corrected calculator is live, reopen any saved lease with a scope increase. If the question is unanswered, review the contract and choose Yes or No before recalculating. If an answer was already saved, confirm it is still shown.</p>
       </div>
       <div class="ic-anchor" id="correction-c-24">
         <div class="ic-anchor-head"><span class="ic-anchor-title">C-24 &middot; 2026-08-06</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="This fix changed input reading or display only; the calculation engine and every saved schedule computed from identical inputs are unchanged.">no engine change</span></span></div>
