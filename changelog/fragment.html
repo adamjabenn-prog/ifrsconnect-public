@@ -1,33 +1,29 @@
-<!-- AUTO-GENERATED changelog fragment. Source registries: engine-changelog.json sha256 69ae62e510b004d747fd651e959c469484e803d8e975031b431c4b0861bc8f18 | corrections-register.json sha256 58651bde7b760c8a1fb9b90354476cad05fb394b708090aae761f2d4b98d8987 -->
+<!-- AUTO-GENERATED changelog fragment. Source registries: engine-changelog.json sha256 5efc86a5c5de30c77ba68f0c01301c617e2a5fbf4c56d9fb9a58c3fd9a62c3a3 | corrections-register.json sha256 bb31689a2df1ba570b67440b00f7299415c40caf64b432b7e8c40a45b77e9654 -->
 <div data-changelog-fragment data-generated-at="2026-08-15T00:00:00+08:00">
 <p class="ic-disclaimer" data-role="changelog-asat">This log was generated on 2026-08-15 from the verification registries. Release checks block a figure-affecting change that lacks an entry.</p>
 
     <div class="ic-pub" id="engine-changelog">
       <div class="ic-pub-head">
         <div><h3>Engine changelog</h3><p>Figure-affecting engine changes, recorded at release</p></div>
-        <span class="ic-pub-count">63 entries</span>
+        <span class="ic-pub-count">62 entries</span>
       </div>
-      <div class="ic-anchor" id="changelog-e-63">
-        <div class="ic-anchor-head"><span class="ic-anchor-title">E-63 &middot; 2026-08-15</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="When this engine release shipped.">engine release 15 August 2026</span></span></div>
-        <div class="ic-anchor-class">Affected: A lease with an exercised break reassessment followed by a payment change before the early-exit date, where final rent and a termination penalty fall on that same contractual date. The earlier calculator could keep a technical one-day-earlier split instead of the contract date and stop the calculation.</div>
-        <p class="ic-src-cite">Later payment changes now keep final rent on the contractual early-exit date.</p>
-        <p class="ic-no-run">When final rent and a termination penalty fall on the same early-exit date, a later payment change now keeps both amounts on that contractual date instead of stopping the calculation.
+      <div class="ic-anchor" id="changelog-e-62">
+        <div class="ic-anchor-head"><span class="ic-anchor-title">E-62 &middot; 2026-08-15</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="When this engine release shipped.">engine release 15 August 2026</span></span></div>
+        <div class="ic-anchor-class">Affected: A lease with a cadence-aligned shortening and a same-day make-good remeasurement, where the revised rate is entered on the term-change row. The earlier calculator could leave that row out unless it also carried a final-period payment that is not applicable on an aligned end date.; A lease with an exercised break reassessment followed by a payment change before the early-exit date, where final rent and a termination penalty fall on that same contractual date. The earlier calculator could keep a technical one-day-earlier split instead of the contract date and stop the calculation.</div>
+        <p class="ic-src-cite">An aligned shortening can now supply the current rate for a same-day make-good remeasurement without an extra final-period rent. Later payment changes now keep final rent on the contractual early-exit date.</p>
+        <p class="ic-no-run">When a revised end date falls on the lease's ordinary payment cadence, there is no separate final part-period rent to enter. The earlier calculator reused the presence of that amount when deciding whether the term-change row belonged to the same-day make-good rate package. A valid calculation could therefore stop, lose the explanation of where its rate came from, or fail to stop when two rows supplied conflicting rates.
+
+The calculator now includes the valid term-change row from its date, revised end and entered rate. An off-cadence end still requires the total rent due for its final part-period. Entering a separate final-period rent on an aligned end remains invalid, and conflicting same-day rates still stop the calculation.
+
+No successfully completed result changes. The affected leases previously stopped or failed to resolve the same-day package. Reopen the lease, check the revised rate, calculate again, save and export a new workbook.
+
+When final rent and a termination penalty fall on the same early-exit date, a later payment change now keeps both amounts on that contractual date instead of stopping the calculation.
 
 The earlier calculator split the final accounting period around the termination payment. When it then rebuilt the changed rent, it could keep the technical day-before boundary and discard the true contract date. The entered final rent could not be placed, so the calculation stopped and no workbook was produced.
 
 The calculator now prefers the unsplit contractual payment date when two new schedule fragments compete for the same rent period. It records the entered final rent once, keeps the separate termination penalty once, and still closes the liability at zero. Missing final rent, a first revised payment after the lease ends, and a final-period amount entered on an aligned end date continue to stop the calculation.
 
 No previously completed calculation changes. The affected route previously stopped without producing figures. Reopen the lease, confirm the early-exit date, final rent and penalty, calculate again, save and export a new workbook.</p>
-      </div>
-      <div class="ic-anchor" id="changelog-e-62">
-        <div class="ic-anchor-head"><span class="ic-anchor-title">E-62 &middot; 2026-08-15</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="When this engine release shipped.">engine release 15 August 2026</span></span></div>
-        <div class="ic-anchor-class">Affected: A lease with a cadence-aligned shortening and a same-day make-good remeasurement, where the revised rate is entered on the term-change row. The earlier calculator could leave that row out unless it also carried a final-period payment that is not applicable on an aligned end date.</div>
-        <p class="ic-src-cite">An aligned shortening can now supply the current rate for a same-day make-good remeasurement without an extra final-period rent.</p>
-        <p class="ic-no-run">When a revised end date falls on the lease's ordinary payment cadence, there is no separate final part-period rent to enter. The earlier calculator reused the presence of that amount when deciding whether the term-change row belonged to the same-day make-good rate package. A valid calculation could therefore stop, lose the explanation of where its rate came from, or fail to stop when two rows supplied conflicting rates.
-
-The calculator now includes the valid term-change row from its date, revised end and entered rate. An off-cadence end still requires the total rent due for its final part-period. Entering a separate final-period rent on an aligned end remains invalid, and conflicting same-day rates still stop the calculation.
-
-No successfully completed result changes. The affected leases previously stopped or failed to resolve the same-day package. Reopen the lease, check the revised rate, calculate again, save and export a new workbook.</p>
       </div>
       <div class="ic-anchor" id="changelog-e-61">
         <div class="ic-anchor-head"><span class="ic-anchor-title">E-61 &middot; 2026-08-14</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="When this engine release shipped.">engine release 14 August 2026</span></span></div>
