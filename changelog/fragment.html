@@ -1,11 +1,115 @@
-<!-- AUTO-GENERATED changelog fragment. Source registries: engine-changelog.json sha256 5efc86a5c5de30c77ba68f0c01301c617e2a5fbf4c56d9fb9a58c3fd9a62c3a3 | corrections-register.json sha256 fa8e58619d5e7f0d4bc18fe0dcdee2fa4bfed16fe4fef6c22304155deb6aa8e7 -->
-<div data-changelog-fragment data-generated-at="2026-08-15T00:00:00+08:00">
-<p class="ic-disclaimer" data-role="changelog-asat">This log was generated on 2026-08-15 from the verification registries. Release checks block a figure-affecting change that lacks an entry.</p>
+<!-- AUTO-GENERATED changelog fragment. Source registries: engine-changelog.json sha256 fd8f46fed5e7ab3e043d297119d13a4288b9643171c637c2ea987cb6b06ebbf4 | corrections-register.json sha256 a4b2b85f323592e5460f3db3fd8da2157448e7dd26b932fb6acf3649850a60d2 -->
+<div data-changelog-fragment data-generated-at="2026-08-24T00:00:00+08:00">
+<p class="ic-disclaimer" data-role="changelog-asat">This log was generated on 2026-08-24 from the verification registries. Release checks block a figure-affecting change that lacks an entry.</p>
 
     <div class="ic-pub" id="engine-changelog">
       <div class="ic-pub-head">
         <div><h3>Engine changelog</h3><p>Figure-affecting engine changes, recorded at release</p></div>
-        <span class="ic-pub-count">62 entries</span>
+        <span class="ic-pub-count">71 entries</span>
+      </div>
+      <div class="ic-anchor" id="changelog-e-71">
+        <div class="ic-anchor-head"><span class="ic-anchor-title">E-71 &middot; 2026-08-24</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="When this engine release shipped.">engine release 24 August 2026</span></span></div>
+        <div class="ic-anchor-class">Affected: A published proof or worked example opened by a Pro or Premium member; A published example whose displayed reporting date is an unambiguous month-first date</div>
+        <p class="ic-src-cite">Published examples now keep their sample download route for every membership tier.</p>
+        <p class="ic-no-run">An unchanged published proof or worked example now keeps the same sample download route for anonymous, Free, Pro and Premium visitors. The earlier paid path treated the same example as an ordinary subscriber calculation before checking its published identity. That removed the governed sample route for paid members even though the inputs had not changed.
+
+The example matcher also now accepts an unambiguous month-first reporting date emitted by the USD selector. Ambiguous dates keep the existing day-first reading instead of being guessed. This prevents a genuine published example from being rejected because its displayed reporting date used the selector's currency format.
+
+Changing any input or starting a new lease still removes sample authority immediately. Free then returns to the normal plan boundary. Pro and Premium return to the ordinary subscriber workbook and review flow. The change affects example recognition and delivery, not the lease schedules, right-of-use asset rows or journals.</p>
+      </div>
+      <div class="ic-anchor" id="changelog-e-70">
+        <div class="ic-anchor-head"><span class="ic-anchor-title">E-70 &middot; 2026-08-24</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="When this engine release shipped.">engine release 24 August 2026</span></span></div>
+        <div class="ic-anchor-class">Affected: A completed paid lease with balances large enough to leave a tiny numerical residue in the final row</div>
+        <p class="ic-src-cite">Complete paid workbooks no longer fail to download because of a tiny rounding residue.</p>
+        <p class="ic-no-run">Some completed Pro and Premium calculations were stopped at download because the final liability or right-of-use balance was a tiny numerical residue. This could happen on long schedules with very large balances, even though every row and journal was present. The calculation itself was complete; the download check was applying a fixed half-cent threshold to values whose numerical rounding grows with the size and length of the schedule.
+
+The download check now allows only a tightly bounded numerical residue derived from the schedule's scale and length. The allowance remains below $2 for a liability and below one-tenth of a cent for a right-of-use asset. A one-cent difference at ordinary customer scale still fails, as do missing rows, altered journals and a large closing balance. When those checks fail, you see a clear error and no workbook is downloaded.
+
+This changes whether a complete paid workbook can be delivered. It does not change any schedule, journal, displayed balance or accounting measurement.</p>
+      </div>
+      <div class="ic-anchor" id="changelog-e-69">
+        <div class="ic-anchor-head"><span class="ic-anchor-title">E-69 &middot; 2026-08-24</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="When this engine release shipped.">engine release 24 August 2026</span></span></div>
+        <div class="ic-anchor-class">Affected: A published proof or worked example downloaded before or after one of its inputs is changed; A free calculation that uses an input included only with a paid plan</div>
+        <p class="ic-src-cite">Published proof and worked-example downloads now stay free only while their inputs still match the published example.</p>
+        <p class="ic-no-run">A published proof or worked example can now download a clearly labelled sample workbook without a subscription. The exception is tied to the exact published inputs and result, rather than to a setting in the browser.
+
+If someone changes an amount, date or option, the page immediately returns to the normal calculator rules. A basic Free calculation can still be viewed, but it cannot be exported. A Free calculation using an input included with Pro or Premium stops before a complete schedule or journal is returned. The calculation reads the membership held by the account on the site and ignores a conflicting tier supplied by the page. Pro and Premium users keep their complete workbooks.
+
+The workbook is still created in the browser, so no new workflow or server-side export is required. This changes delivery and access, not the accounting measurement. The schedules, right-of-use asset rows and journals from identical completed subscriber calculations are unchanged.</p>
+      </div>
+      <div class="ic-anchor" id="changelog-e-68">
+        <div class="ic-anchor-head"><span class="ic-anchor-title">E-68 &middot; 2026-08-22</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="When this engine release shipped.">engine release 22 August 2026</span></span></div>
+        <div class="ic-anchor-class">Affected: A lease where the amount expected to be payable under an existing residual value guarantee changes after commencement</div>
+        <p class="ic-src-cite">The calculator can now record a later change in the amount expected to be payable under an existing residual value guarantee.</p>
+        <p class="ic-no-run">The amount expected under a residual value guarantee can change after a lease starts. The calculator previously had no supported route for that later estimate. Replacing the commencement amount would also rewrite the historical measurement, while placing the later amount on another change row could leave it unused.
+
+The calculator now keeps the original guarantee in the commencement measurement and records one later estimate separately. It leaves every earlier schedule row unchanged, replaces only the guarantee cash flow from the entered date and uses the rate that is already in force. If a lease-term or break decision takes effect on the same day, the calculator uses the revised rate from that decision and measures the two changes together before applying the right-of-use asset floor. The entered and applied amounts carry through save, reopen, the calculation workbook and the saved disclosure evidence.
+
+This first release supports one estimate-change row for a guarantee that was already part of the lease. A blank commencement amount means there was no guarantee; an entered zero means a guarantee existed but was expected to cost nothing. The commencement and revised estimates can be up to 1,000,000,000,000.00 and carry no more than two decimal places, so adjacent cents remain distinct throughout the calculation. Adding a new guarantee mid-lease is a lease change, not an estimate update. A guarantee estimate following an earlier lease modification is also not yet supported, because it must be rebuilt on the modified payment grid. Those combinations stop with a named explanation instead of producing a figure.
+
+For an affected lease, keep the original guarantee amount in the commencement field and add the later estimate under the guarantee card. Enter zero when the expected payment has fallen to nil. If the calculator stops because the lease also contains a modification, leave the figures unchanged and review that combination separately.</p>
+      </div>
+      <div class="ic-anchor" id="changelog-e-67">
+        <div class="ic-anchor-head"><span class="ic-anchor-title">E-67 &middot; 2026-08-22</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="When this engine release shipped.">engine release 22 August 2026</span></span></div>
+        <div class="ic-anchor-class">Affected: A lease with a scope reduction and a make-good estimate change on the same date</div>
+        <p class="ic-src-cite">The calculator now confirms what a same-day make-good estimate represents before applying it with a scope reduction.</p>
+        <p class="ic-no-run">When a scope reduction and a change to the make-good estimate share one date, the calculator now asks whether the entered amount is the total revised expected settlement cash outflow after considering the reduction. That total must include any obligation that still applies to surrendered space.
+
+The earlier calculator assumed the amount was already the complete post-reduction total. It then applied the scope reduction first and remeasured the make-good provision to the entered amount. If the preparer had instead entered an estimate from before the scope reduction, the resulting asset and provision could be wrong. The calculator cannot safely derive the answer from the scope percentage because some make-good obligations may survive for space that has been surrendered.
+
+The calculator now waits for an explicit answer. If the amount is the post-reduction total, the scope reduction is applied first and the provision is then remeasured without scaling the amount. If the amount is still the pre-reduction estimate, the calculation stops and asks for the updated total. Missing or unrecognised answers also stop, while both entered rows remain available for correction. The answer carries through save, reopen and the workbook audit trail. A standalone make-good change, a change on a different date and a scope increase are unchanged.
+
+For an affected saved lease, reopen it and confirm the basis before calculating again. If an earlier workbook combined these two events without that confirmation, review the make-good estimate and replace the workbook after the corrected calculator is live.</p>
+      </div>
+      <div class="ic-anchor" id="changelog-e-66">
+        <div class="ic-anchor-head"><span class="ic-anchor-title">E-66 &middot; 2026-08-21</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="When this engine release shipped.">engine release 21 August 2026</span></span></div>
+        <div class="ic-anchor-class">Affected: A lease with a valid break option and rent change beside a separate reassessment row that cannot be used</div>
+        <p class="ic-src-cite">A rejected reassessment row no longer prevents an otherwise valid break option from being handled.</p>
+        <p class="ic-no-run">Figures from completed calculations do not change.
+
+A lease can contain a valid break option and rent change alongside a separate reassessment row that is missing or has invalid details. The earlier calculator let the unusable row occupy the same routing position as an accepted reassessment. It then left out the otherwise valid break and reported an overlap and an accepted change not included, even though the unusable row had never been accepted.
+
+The calculator now separates rejected rows from accepted events before it applies the break. It keeps the rejected row and its reason for review, applies the valid rent change and break in their proper date order, and then stops because the rejected row still needs correction. A genuine accepted reassessment that conflicts with a rent change still stops. Leases with only a break, and leases with a rent change and break, are unchanged.
+
+Correct the rejected reassessment row and calculate again before saving or exporting. No workbook was previously produced for the affected stopped case, so this entry does not replace any issued figure.</p>
+      </div>
+      <div class="ic-anchor" id="changelog-e-65">
+        <div class="ic-anchor-head"><span class="ic-anchor-title">E-65 &middot; 2026-08-21</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="When this engine release shipped.">engine release 21 August 2026</span></span></div>
+        <div class="ic-anchor-class">Affected: A lease whose calculation reports an unsupported change without also setting a blocking flag or severity; A calculated or saved lease whose issue record or accepted-change summary is unknown, malformed or incomplete</div>
+        <p class="ic-src-cite">The calculator, export, save, reopen and disclosure routes now make the same decision about whether a calculation completed safely.</p>
+        <p class="ic-no-run">Figures from correctly completed calculations do not change.
+
+The product previously made the completion decision in several places. One route looked only for a blocking flag, another also read the issue name, and saved leases and disclosures had their own checks. An unsupported change could therefore stop the workbook but still leave a schedule marked as completed, or a saved result could pass one route and fail another.
+
+The calculator, workbook, save, reopen and disclosure routes now use one decision. A change accepted but not included still stops. A named blocking issue still stops even when an older result carries no flag or severity. An unknown or malformed issue record also stops instead of being treated as harmless. Several rows combined into one correctly applied same-day event remain accepted, and an ordinary completed lease still calculates, saves and exports normally.
+
+If a saved lease now says the calculation was not completed, reopen it, review the highlighted item and calculate again before saving or exporting. Do not rely on figures from an earlier saved version that omitted a change.</p>
+      </div>
+      <div class="ic-anchor" id="changelog-e-64">
+        <div class="ic-anchor-head"><span class="ic-anchor-title">E-64 &middot; 2026-08-21</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="When this engine release shipped.">engine release 21 August 2026</span></span></div>
+        <div class="ic-anchor-class">Affected: A lease with a separately stated asset useful life, including one whose useful life ends before the lease term or whose term later changes; A lease saved before the calculator asked whether ownership transfers to the lessee by the end of the lease term</div>
+        <p class="ic-src-cite">The calculator now asks whether ownership transfers and applies a separately entered asset useful life throughout the lease.</p>
+        <p class="ic-no-run">The asset useful-life box now states that its unit is years and is available independently of a purchase option. The calculator also asks whether ownership transfers to the lessee by the end of the lease term.
+
+If ownership transfers, or a purchase option is reasonably certain to be exercised, the right-of-use asset is depreciated over the asset's useful life. Otherwise, it is depreciated to the earlier of the end of that useful life and the end of the lease term. The same decision now carries through an index review, a change to the lease and a later reassessment.
+
+The earlier calculator read a separately entered useful life only when a purchase option was reasonably certain. On a lease without that option, a shorter life could therefore be ignored and depreciation could continue to the end of the lease term. Recalculate those leases after confirming the ownership answer and useful life.
+
+A saved lease that does not yet contain the ownership answer now stops on recalculation and asks for it instead of assuming No. After the preparer confirms No, a lease with no separately entered useful life produces the same figures as before.
+
+If a positive remeasurement falls after the stated useful life has ended, the calculator stops rather than inventing a new depreciation treatment. Review that lease before producing or exporting figures.</p>
+      </div>
+      <div class="ic-anchor" id="changelog-e-63">
+        <div class="ic-anchor-head"><span class="ic-anchor-title">E-63 &middot; 2026-08-18</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="When this engine release shipped.">engine release 18 August 2026</span></span></div>
+        <div class="ic-anchor-class">Affected: A lease extended past an original end date that falls part-way through a month, where a one-off final payment was entered for that part month; A lease where a change was accepted but the figures did not include it</div>
+        <p class="ic-src-cite">A one-off final payment for a part month is no longer charged for every month of an extension, and a calculation that accepted a change without including it now stops instead of producing figures.</p>
+        <p class="ic-no-run">Two changes, both affecting figures.
+
+Where a lease was extended past an original end date falling part-way through a month, the calculator asks for the payment covering that part month. That single answer was then charged for every month of the extension. On a measured lease the liability at the join read about thirteen and a half million where the contract gives about twenty-eight and a half million, with roughly sixteen million of contracted rent absent. The one-off payment is now charged once, for the period it belongs to, and the extension months carry the contractual amount. A lease without an extension is unchanged, and so is one where the part-month payment happens to equal the ordinary rent.
+
+Separately, where the calculator accepted a change to a lease but could not apply it to the figures, it previously finished and handed over a workbook whose schedule left the change out. On a measured lease that meant a schedule ending two years early, two hundred and forty thousand of payments missing, and the liability at a remeasurement understated by about a hundred and seventy-eight thousand. The calculation now stops and says so, and the export refuses a saved lease in that state as well, so a lease saved before this change cannot be exported with the change left out. A lease where every accepted change reached the figures is unaffected and still exports.
+
+If you hold figures produced before this release for either kind of lease, recalculate them.</p>
       </div>
       <div class="ic-anchor" id="changelog-e-62">
         <div class="ic-anchor-head"><span class="ic-anchor-title">E-62 &middot; 2026-08-15</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="When this engine release shipped.">engine release 15 August 2026</span></span></div>
@@ -395,6 +499,7 @@ Separately, a calculation for a lease with no changes and no reviews recorded ag
         <div class="ic-anchor-head"><span class="ic-anchor-title">E-30 &middot; 2026-08-06</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="When this engine release shipped.">engine release 6 August 2026</span></span></div>
         <div class="ic-anchor-class">Affected: Leases whose right-of-use asset starts with a credit balance; Leases with more than one index review landing in the same accounting period; Leases whose index remeasurement is recorded at the end of a period</div>
         <p class="ic-src-cite">No lease balance, payment or charge changes. Where the right-of-use asset starts with a credit balance, the journal now puts positive amounts in the correct debit or credit columns instead of putting a negative amount in the opposite column. When more than one index review lands in one accounting period, the audit evidence keeps the review that was measured and lists the ignored review separately. An index remeasurement recorded at period end now appears after that period's payment and accrual, so the final journal balance agrees with the closing schedule.</p>
+        <p class="ic-no-run" data-role="entry-correction"><strong>A later entry corrects this record (engine release 14 August 2026):</strong> This entry corrects two statements in the record for the engine release dated 6 August 2026. Two entries from that date were published together in one release, not as separate calculator versions. The earlier entry also said no lease balance or charge changed. That statement was wrong for a monthly lease whose index review was entered on the last day of a rent period. This correction changes the published record only. The current calculation does not change.</p>
         <p class="ic-no-run">The schedule and measurement results are unchanged. The journal correction covers recognition of a credit-balance right-of-use asset, its release over the applicable term and any later derecognition or owned-asset tail. The index evidence now separates the rows entered, rows moved to payment dates, the row retained for measurement and any same-period row ignored under the first-row rule. Too few or too many mapping rows both stop the workbook from being treated as clean. Period-end remeasurement is recorded as the closing event for that period, which makes the final journal carrying balance agree with the schedule without changing any underlying amount.</p>
       </div>
       <div class="ic-anchor" id="changelog-e-29">
@@ -586,7 +691,28 @@ References: IFRS 16 paragraph 36, a lease liability is carried at amortised cost
     <div class="ic-pub" id="corrections-register">
       <div class="ic-pub-head">
         <div><h3>Corrections register</h3><p>Input-reading and display fixes that did not change the engine</p></div>
-        <span class="ic-pub-count">35 entries</span>
+        <span class="ic-pub-count">38 entries</span>
+      </div>
+      <div class="ic-anchor" id="correction-c-38">
+        <div class="ic-anchor-head"><span class="ic-anchor-title">C-38 &middot; 2026-08-23</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="This fix changed input reading or display only; the calculation engine and every saved schedule computed from identical inputs are unchanged.">no engine change</span></span></div>
+        <div class="ic-anchor-class">Where: Saved termination evidence in the Excel audit pack; The applied-measurement trace and event reconciliation</div>
+        <p class="ic-src-cite">An earlier audit pack could show a superseded termination date, point to the wrong input section, or say that no journal rows were captured even though the workbook included the linked journal. On a negotiated change it could also fail its applied-measurement check despite the schedule and journal agreeing, and could describe the surviving-lease remeasurement against the wrong starting point. The corrected workbook uses the settlement date in the current schedule and journal, names the input section that actually supplied the term change, lists the linked journal rows, recognises the negotiated fee evidence and describes the remeasurement after derecognition. No payment, liability, right-of-use asset, interest, depreciation, cash, journal or disclosure figure changes.</p>
+        <p class="ic-no-run"><strong>Affected input shape:</strong> An older saved lease whose termination was classified at commencement, as a later reassessment, or as a negotiated modification, especially where a later event changed the lease end or an agreed exit fee was payable. <strong>Window:</strong> The exact start date is not known. The corrected exporter is local and has not yet been placed on the live calculator, so workbooks exported from the live site may still show the earlier evidence.</p>
+        <p class="ic-no-run"><strong>What to check:</strong> After the corrected exporter is live, export again if an earlier workbook for one of these leases showed the old termination date, an empty journal trace, the wrong input pointer or a failed applied-measurement check while the schedule and journal otherwise agreed. No recalculation or accounting adjustment is required solely for this correction. If the new workbook still reports a mismatch, review that evidence separately.</p>
+      </div>
+      <div class="ic-anchor" id="correction-c-37">
+        <div class="ic-anchor-head"><span class="ic-anchor-title">C-37 &middot; 2026-08-21</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="This fix changed input reading or display only; the calculation engine and every saved schedule computed from identical inputs are unchanged.">no engine change</span></span></div>
+        <div class="ic-anchor-class">Where: The calculator result and calculation notes; Saved Manage Leases cards and disclosure notes; The Excel audit pack</div>
+        <p class="ic-src-cite">Earlier customer-facing notes said only that the fixed increase continued on the revised payment. They did not clearly say that the increase survived the rent change or show both the revised rent and the next anniversary amount. The corrected calculator, saved card, disclosure note and audit pack state the continuing rule, the revised rent, the next increase date and the amount due then. The lease calculation, schedules, journals and every accounting figure are unchanged.</p>
+        <p class="ic-no-run"><strong>Affected input shape:</strong> A lease with a fixed annual rent increase and a later rent change where the increase continues on the revised rent. <strong>Window:</strong> The exact start date is not known. The corrected calculator, Manage Leases files and exporter are local and have not yet been placed on the live site, so the live surfaces may still use the earlier wording.</p>
+        <p class="ic-no-run"><strong>What to check:</strong> No recalculation or accounting adjustment is needed. After the corrected files are live, reopen the lease or export a new audit pack if you need the clearer record. If the revised agreement ended the fixed increase, remove that increase from the inputs and calculate again.</p>
+      </div>
+      <div class="ic-anchor" id="correction-c-36">
+        <div class="ic-anchor-head"><span class="ic-anchor-title">C-36 &middot; 2026-08-21</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="This fix changed input reading or display only; the calculation engine and every saved schedule computed from identical inputs are unchanged.">no engine change</span></span></div>
+        <div class="ic-anchor-class">Where: Dates shown throughout the Excel audit pack</div>
+        <p class="ic-src-cite">Earlier workbooks left real date cells on Excel's regional short-date display. The same file could therefore show day first for one reader and month first for another, while the calculator named the month. Dates in newly exported workbooks now name the month, matching the calculator and removing that ambiguity. The date values, formulae, schedules, journals, controls and every accounting figure are unchanged.</p>
+        <p class="ic-no-run"><strong>Affected input shape:</strong> Any exported lease workbook, in any supported lease currency, where a reader's regional short-date order differs from the calculator's month-named date display. <strong>Window:</strong> The exact start date is not known. The corrected exporter is local and has not yet been placed on the live calculator, so workbooks exported from the live site may still use the reader's regional short-date order.</p>
+        <p class="ic-no-run"><strong>What to check:</strong> No recalculation or accounting adjustment is needed. After the corrected exporter is live, export again if you want a workbook whose dates match the calculator's month-named display wherever the file is opened.</p>
       </div>
       <div class="ic-anchor" id="correction-c-35">
         <div class="ic-anchor-head"><span class="ic-anchor-title">C-35 &middot; 2026-08-14</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="This fix changed input reading or display only; the calculation engine and every saved schedule computed from identical inputs are unchanged.">no engine change</span></span></div>
@@ -775,14 +901,14 @@ References: IFRS 16 paragraph 36, a lease liability is carried at amortised cost
         <div class="ic-anchor-class">Where: Schedule export Depreciation Walkthrough tab (leases whose end date was changed by a modification or reassessment)</div>
         <p class="ic-src-cite">Before the end-date change takes effect, the schedules correctly depreciate the right-of-use asset over the lease term that was in force at the time. The Depreciation Walkthrough sheet, which shows the working behind each period's depreciation, instead measured its 'Remaining Frame' on those earlier rows against the revised term. On a shortened lease that understated the frame, so Expected Depreciation ran too high and the Diff columns grew period by period; on an extended lease the frame picked up one month too many. Rows from the change date onwards were always right. As with the purchase-option correction (C-8), the actual depreciation in the ROU schedule, the journals and every balance were always correct; only the walkthrough's explanatory columns disagreed with them. The walkthrough now measures each row against the lease end in force for that row, and the workbook's walkthrough controls fail if the sheet ever disagrees with the schedule again.</p>
         <p class="ic-no-run"><strong>Affected input shape:</strong> A lease with a modification or reassessment that changed the lease end date (shortened or extended), exported with the Depreciation Walkthrough sheet. The rows before the change date were affected. <strong>Window:</strong> From the walkthrough sheet going live on 12 June 2026 until 12 July 2026.</p>
-        <p class="ic-no-run"><strong>What to check:</strong> Nothing for the lease figures: the ROU schedule, journals and balances were always correct. If you exported a lease with an end-date change before 12 July 2026, ignore the Expected Depreciation and Diff columns on the rows before the change on that workbook's Depreciation Walkthrough sheet, or re-export to get a corrected sheet.</p>
+        <p class="ic-no-run"><strong>What to check:</strong> Nothing for the lease figures. On this shape, a lease whose end date was changed by a modification or reassessment, the ROU schedule, journals and balances were always correct. If you exported one of those leases before 12 July 2026, ignore the Expected Depreciation and Diff columns on the rows before the change on that workbook's Depreciation Walkthrough sheet, or re-export to get a corrected sheet.</p>
       </div>
       <div class="ic-anchor" id="correction-c-8">
         <div class="ic-anchor-head"><span class="ic-anchor-title">C-8 &middot; 2026-07-12</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="This fix changed input reading or display only; the calculation engine and every saved schedule computed from identical inputs are unchanged.">no engine change</span></span></div>
         <div class="ic-anchor-class">Where: Schedule export Depreciation Walkthrough tab (purchase-option leases)</div>
         <p class="ic-src-cite">On a purchase-option lease the schedules correctly depreciate the right-of-use asset over the asset's useful life rather than the lease term (IFRS 16.32). The Depreciation Walkthrough sheet, which shows the working behind each period's depreciation, wrongly measured its 'Remaining Frame' to the lease end instead of the useful-life end on the in-lease rows. So its Expected Depreciation, Depreciation Diff, Expected Closing ROU and Closing Diff columns were wrong on those rows: the Diff column grew from around one month's depreciation at the start to the entire remaining carrying amount at the final lease period, and Expected Closing ROU showed zero at lease end while the schedule correctly carried the asset into the owned-asset period. The actual depreciation numbers in the ROU schedule, the journals and every balance were always right; only the walkthrough's explanatory columns disagreed with them. The walkthrough now uses the same useful-life horizon as the schedules, and the workbook's walkthrough controls now fail if the walkthrough ever disagrees with the schedule again.</p>
         <p class="ic-no-run"><strong>Affected input shape:</strong> A lease with a purchase option that is reasonably certain to be exercised and an asset useful life longer than the lease term, exported with the Depreciation Walkthrough sheet. <strong>Window:</strong> From the purchase-option features going live on 2 July 2026 until 12 July 2026.</p>
-        <p class="ic-no-run"><strong>What to check:</strong> Nothing for the lease figures: the ROU schedule, journals and balances were always correct. If you exported a purchase-option lease before 12 July 2026, ignore the Expected Depreciation and Diff columns on that workbook's Depreciation Walkthrough sheet, or re-export to get a corrected sheet.</p>
+        <p class="ic-no-run"><strong>What to check:</strong> Nothing for the lease figures. On this shape, a purchase option that is reasonably certain to be exercised with an asset useful life longer than the lease term, the ROU schedule, journals and balances were always correct. If you exported one of those leases before 12 July 2026, ignore the Expected Depreciation and Diff columns on that workbook's Depreciation Walkthrough sheet, or re-export to get a corrected sheet.</p>
       </div>
       <div class="ic-anchor" id="correction-c-7">
         <div class="ic-anchor-head"><span class="ic-anchor-title">C-7 &middot; 2026-07-12</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="This fix changed input reading or display only; the calculation engine and every saved schedule computed from identical inputs are unchanged.">no engine change</span></span></div>
