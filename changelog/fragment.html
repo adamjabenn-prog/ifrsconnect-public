@@ -1,11 +1,31 @@
-<!-- AUTO-GENERATED changelog fragment. Source registries: engine-changelog.json sha256 fd8f46fed5e7ab3e043d297119d13a4288b9643171c637c2ea987cb6b06ebbf4 | corrections-register.json sha256 a4b2b85f323592e5460f3db3fd8da2157448e7dd26b932fb6acf3649850a60d2 -->
-<div data-changelog-fragment data-generated-at="2026-08-24T00:00:00+08:00">
-<p class="ic-disclaimer" data-role="changelog-asat">This log was generated on 2026-08-24 from the verification registries. Release checks block a figure-affecting change that lacks an entry.</p>
+<!-- AUTO-GENERATED changelog fragment. Source registries: engine-changelog.json sha256 b21f97869bb473a9eb5af3c16edd87d7177b6f68db16a5254f075a23aa94bb3b | corrections-register.json sha256 daee6fcfcd231e0073dff356653edf5aafcf3d4772974a21b941d64199c5c855 -->
+<div data-changelog-fragment data-generated-at="2026-09-04T00:00:00+08:00">
+<p class="ic-disclaimer" data-role="changelog-asat">This log was generated on 2026-09-04 from the verification registries. Release checks block a figure-affecting change that lacks an entry.</p>
 
     <div class="ic-pub" id="engine-changelog">
       <div class="ic-pub-head">
         <div><h3>Engine changelog</h3><p>Figure-affecting engine changes, recorded at release</p></div>
-        <span class="ic-pub-count">71 entries</span>
+        <span class="ic-pub-count">73 entries</span>
+      </div>
+      <div class="ic-anchor" id="changelog-e-73">
+        <div class="ic-anchor-head"><span class="ic-anchor-title">E-73 &middot; 2026-09-04</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="When this engine release shipped.">engine release 4 September 2026</span></span></div>
+        <div class="ic-anchor-class">Affected: A Free calculation with more than three right-of-use asset periods</div>
+        <p class="ic-src-cite">Free previews now keep the full-lease depreciation total above the limited schedule preview.</p>
+        <p class="ic-no-run">Free results intentionally show only the first three right-of-use asset and journal rows. On a lease with more than three right-of-use periods, the Total Depreciation card could therefore add only the visible preview rows and understate the full-lease total. The detailed preview limit was working as designed, but the summary above it was not.
+
+The server now calculates total depreciation from the complete right-of-use schedule before it trims the detailed Free preview. The summary therefore describes the whole lease while the preview still states that only the first three rows are shown. The lease liability, opening right-of-use asset, depreciation schedule, journals and all Pro, Premium and published-example results are unchanged.
+
+After the corrected calculator is live, recalculate an affected Free lease to see the full-lease depreciation total. No accounting adjustment is needed when a paid result or complete schedule already carried the correct rows.</p>
+      </div>
+      <div class="ic-anchor" id="changelog-e-72">
+        <div class="ic-anchor-head"><span class="ic-anchor-title">E-72 &middot; 2026-08-25</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="When this engine release shipped.">engine release 25 August 2026</span></span></div>
+        <div class="ic-anchor-class">Affected: A lease where an index-linked rent change takes effect before a later reduction in the leased space; A lease where an index-linked rent change takes effect before a negotiated shortening of the lease term</div>
+        <p class="ic-src-cite">A price-index change before a partial lease reduction now stays in the workbook journal.</p>
+        <p class="ic-no-run">When an index-linked rent change took effect immediately before a later reduction in leased space or a negotiated shortening of the lease term, the liability schedule included the reviewed rent but the workbook journal could omit the matching remeasurement entry. The workbook was still produced, and its liability reconciliation check showed a difference. This affected the journal and audit trail. It did not change the contractual payments or liability schedule.
+
+The calculator now keeps that index remeasurement in the journal before it records the reduction. The journal, right-of-use adjustment and liability schedule then reconcile in the same order.
+
+If you produced a workbook for either combination before this update, recalculate and replace it.</p>
       </div>
       <div class="ic-anchor" id="changelog-e-71">
         <div class="ic-anchor-head"><span class="ic-anchor-title">E-71 &middot; 2026-08-24</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="When this engine release shipped.">engine release 24 August 2026</span></span></div>
