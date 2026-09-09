@@ -1,11 +1,17 @@
-<!-- AUTO-GENERATED changelog fragment. Source registries: engine-changelog.json sha256 0c1a5efb51d27c0ff60f636b8a8f30b01bac70900e3ba8c0a37040d4b418fa3d | corrections-register.json sha256 510586e9e0537d37924389cbe9df273645d8c84c01c2f93456718cd1e94d22b7 -->
+<!-- AUTO-GENERATED changelog fragment. Source registries: engine-changelog.json sha256 27736adaa7651ff9994b4064b7ef8fa5fc67f8c5ffb36346bb9f81c10b72ec32 | corrections-register.json sha256 a9b01e534d4ef414fac70a4abbcb3cc84877b43ab21bd3692804172a9320bed1 -->
 <div data-changelog-fragment data-generated-at="2026-09-09T00:00:00+08:00">
 <p class="ic-disclaimer" data-role="changelog-asat">This log was generated on 2026-09-09 from the verification registries. Release checks block a figure-affecting change that lacks an entry.</p>
 
     <div class="ic-pub" id="engine-changelog">
       <div class="ic-pub-head">
         <div><h3>Engine changelog</h3><p>Figure-affecting engine changes, recorded at release</p></div>
-        <span class="ic-pub-count">80 entries</span>
+        <span class="ic-pub-count">81 entries</span>
+      </div>
+      <div class="ic-anchor" id="changelog-e-81">
+        <div class="ic-anchor-head"><span class="ic-anchor-title">E-81 &middot; 2026-09-09</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="When this engine release shipped.">engine release 9 September 2026</span></span></div>
+        <div class="ic-anchor-class">No user-visible figure changes</div>
+        <p class="ic-src-cite">Calculation periods retain their original date boundaries for display.</p>
+        <p class="ic-no-run">An internal split now retains the start and end of its original accounting period. This supports a separate schedule display without changing contractual cash, interest, depreciation, balances or dated journals. The display and workbook changes remain under release testing.</p>
       </div>
       <div class="ic-anchor" id="changelog-e-80">
         <div class="ic-anchor-head"><span class="ic-anchor-title">E-80 &middot; 2026-09-09</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="When this engine release shipped.">engine release 9 September 2026</span></span></div>
@@ -781,7 +787,14 @@ References: IFRS 16 paragraph 36, a lease liability is carried at amortised cost
     <div class="ic-pub" id="corrections-register">
       <div class="ic-pub-head">
         <div><h3>Corrections register</h3><p>Input-reading and display fixes that did not change the engine</p></div>
-        <span class="ic-pub-count">39 entries</span>
+        <span class="ic-pub-count">40 entries</span>
+      </div>
+      <div class="ic-anchor" id="correction-c-40">
+        <div class="ic-anchor-head"><span class="ic-anchor-title">C-40 &middot; 2026-09-09</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="This fix changed input reading or display only; the calculation engine and every saved schedule computed from identical inputs are unchanged.">no engine change</span></span></div>
+        <div class="ic-anchor-class">Where: Calculator liability and right-of-use asset tables; Main schedules and calculation walkthroughs in the Excel audit pack; The Control Register explanation of journals for the original calculation periods</div>
+        <p class="ic-src-cite">Technical calculation splits could appear as extra customer schedule periods, making a no-cash row look like a missing payment. The main tables now combine eligible rows within the original accounting period and retain their dated payments, adjustments and calculation-row references. Genuine short contractual periods remain. Displayed amounts can therefore differ row by row, but the underlying dated cash, remeasurements, carrying balances, interest, depreciation, totals and journals are unchanged. The calculator also stops deducting an already-recognised advance payment twice in its displayed liability bridge. An anniversary-date check in the workbook and its interest walkthrough now use the correct end of a short calendar month, avoiding a false interest mismatch. Dated journals and detailed calculation walkthroughs remain available in the workbook.</p>
+        <p class="ic-no-run"><strong>Affected input shape:</strong> A modification, index review or reassessment that splits an accounting period into dated calculation rows; a displayed advance-payment bridge; or an anniversary-based interest walkthrough near a short calendar month. <strong>Window:</strong> This correction is prepared locally. It has not yet been verified on the live calculator.</p>
+        <p class="ic-no-run"><strong>What to check:</strong> After the corrected files are live, calculate and export again if you need the clearer schedule layout or an updated walkthrough. Keep the dated journal and calculation details when reconciling a combined row. This presentation update does not itself change the underlying lease accounting amounts.</p>
       </div>
       <div class="ic-anchor" id="correction-c-39">
         <div class="ic-anchor-head"><span class="ic-anchor-title">C-39 &middot; 2026-09-07</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="This fix changed input reading or display only; the calculation engine and every saved schedule computed from identical inputs are unchanged.">no engine change</span></span></div>
