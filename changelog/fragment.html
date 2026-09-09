@@ -1,11 +1,81 @@
-<!-- AUTO-GENERATED changelog fragment. Source registries: engine-changelog.json sha256 b21f97869bb473a9eb5af3c16edd87d7177b6f68db16a5254f075a23aa94bb3b | corrections-register.json sha256 0a1bab4cad77d796181b862587b8033f41c783c7b6a163abf1b7dcfe7b630d0b -->
-<div data-changelog-fragment data-generated-at="2026-09-07T00:00:00+08:00">
-<p class="ic-disclaimer" data-role="changelog-asat">This log was generated on 2026-09-07 from the verification registries. Release checks block a figure-affecting change that lacks an entry.</p>
+<!-- AUTO-GENERATED changelog fragment. Source registries: engine-changelog.json sha256 0c1a5efb51d27c0ff60f636b8a8f30b01bac70900e3ba8c0a37040d4b418fa3d | corrections-register.json sha256 510586e9e0537d37924389cbe9df273645d8c84c01c2f93456718cd1e94d22b7 -->
+<div data-changelog-fragment data-generated-at="2026-09-09T00:00:00+08:00">
+<p class="ic-disclaimer" data-role="changelog-asat">This log was generated on 2026-09-09 from the verification registries. Release checks block a figure-affecting change that lacks an entry.</p>
 
     <div class="ic-pub" id="engine-changelog">
       <div class="ic-pub-head">
         <div><h3>Engine changelog</h3><p>Figure-affecting engine changes, recorded at release</p></div>
-        <span class="ic-pub-count">73 entries</span>
+        <span class="ic-pub-count">80 entries</span>
+      </div>
+      <div class="ic-anchor" id="changelog-e-80">
+        <div class="ic-anchor-head"><span class="ic-anchor-title">E-80 &middot; 2026-09-09</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="When this engine release shipped.">engine release 9 September 2026</span></span></div>
+        <div class="ic-anchor-class">Affected: A shortened lease where recurring rent and a separately agreed exit fee are paid on the same date; An off-cadence lease change whose existing timing review is enriched with the final applied payment date</div>
+        <p class="ic-src-cite">Lease-change workbook proofs now keep terminal cash and timing reviews distinct.</p>
+        <p class="ic-no-run">A shortened lease can settle its final recurring rent and a separately agreed exit fee on the same date. The liability schedule correctly shows the combined cash, while the journal keeps the two components separate. The workbook check could compare the recurring rent with the combined total and refuse a valid export.
+
+The calculation now records the recurring rent after removing the separately identified exit fee from that date's total cash. The workbook still requires the recurring rent, exit fee, liability schedule, payment journals and present-value evidence to reconcile before it downloads. An existing off-cadence timing review also keeps the same identity while its applied payment date is updated, so saved leases and workbooks do not recast one review as a different warning.
+
+This update changes proof and review metadata and allows valid exports that were previously refused. It does not change contractual cash, the interest method, the lease liability, the right-of-use asset or journal amounts.</p>
+      </div>
+      <div class="ic-anchor" id="changelog-e-79">
+        <div class="ic-anchor-head"><span class="ic-anchor-title">E-79 &middot; 2026-09-09</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="When this engine release shipped.">engine release 9 September 2026</span></span></div>
+        <div class="ic-anchor-class">Affected: A lease-term change that keeps the existing rent and starts on an exact or nearby contractual payment boundary; A quarterly or annual rent change after rent-free months or fixed annual increases</div>
+        <p class="ic-src-cite">Lease-change workbooks now prove inherited and non-monthly rent without refusing valid exports.</p>
+        <p class="ic-no-run">A lease-term change can keep the existing rent without asking the user to enter that amount again. The calculation previously carried the cash correctly but did not publish the same settlement proof used for an explicitly revised rent. Separately, a quarterly or annual rent can be represented by several monthly liability rows inside one contractual payment period. The exporter could treat those valid rows as a mismatch and refuse the workbook.
+
+The calculation now proves inherited rent against one matching present-value row and one matching contractual cadence row. The exporter checks the complete monthly schedule span for each quarterly or annual payment, including its exact boundary, timing and total cash. A missing row, altered amount or unproved date still stops the export before workbook bytes are produced.
+
+This update changes the proof carried into the workbook and allows valid exports that were previously refused. It does not change the contractual cash, interest method, lease liability, right-of-use asset or journal amounts.</p>
+      </div>
+      <div class="ic-anchor" id="changelog-e-78">
+        <div class="ic-anchor-head"><span class="ic-anchor-title">E-78 &middot; 2026-09-09</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="When this engine release shipped.">engine release 9 September 2026</span></span></div>
+        <div class="ic-anchor-class">Affected: A modified lease with fixed annual increases where an in-arrears revised payment falls immediately before a contract anniversary; A revised payment entered during an opening rent-free period where cash begins in a later contract year</div>
+        <p class="ic-src-cite">Revised rent now steps up on the exact contract anniversary, including dates beside that boundary.</p>
+        <p class="ic-no-run">A revised payment immediately before a contract anniversary still belongs to the contract year that is ending. The calculation previously compared only the month and year, so this narrow date shape could treat that payment as though the anniversary had already passed and apply one fewer later fixed increase.
+
+The calculation now counts the exact anniversary date. It treats the day before the anniversary as part of the earlier contract year and the anniversary itself as the start of the next year. The workbook also proves the full zero-payment interval when revised rent is entered during an opening rent-free period; deleting the first preserved boundary now stops the export.
+
+This can change the revised payment, liability, right-of-use asset and journals for an affected lease. Recalculate and replace any workbook where a revised payment falls immediately before an annual anniversary and a fixed increase continues after the change.</p>
+      </div>
+      <div class="ic-anchor" id="changelog-e-77">
+        <div class="ic-anchor-head"><span class="ic-anchor-title">E-77 &middot; 2026-09-09</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="When this engine release shipped.">engine release 9 September 2026</span></span></div>
+        <div class="ic-anchor-class">Affected: A lease with opening rent-free months where a revised payment starts before the first charged rent and the fixed annual escalation continues; A lease starting near month-end where the entered revised-payment date is beside, but not on, its contractual payment boundary</div>
+        <p class="ic-src-cite">Lease-change workbooks now prove the exact revised-payment boundary used after a rent-free period.</p>
+        <p class="ic-no-run">When a revised rent was entered during an opening rent-free period and the lease also carried a fixed annual escalation, the calculation could correctly delay the cash until rent became due and apply the escalation, but the workbook proof did not retain enough information to distinguish the amount entered by the user from the amount due at that later date. A valid workbook could be refused, particularly for leases starting near month-end or when the revised stream was deliberately entered to begin later.
+
+The calculation now retains the exact contractual payment anchor used before the rent-free delay, the original amount entered, the permitted fixed escalation and every intervening zero-payment date. The workbook independently reconstructs the anchor from the lease cadence and requires the present-value cash, liability schedule and payment journal to agree before it downloads.
+
+This changes the audit evidence and whether a valid workbook can download. It does not change the lease payments, interest method, liability, right-of-use asset or journal amounts.</p>
+      </div>
+      <div class="ic-anchor" id="changelog-e-76">
+        <div class="ic-anchor-head"><span class="ic-anchor-title">E-76 &middot; 2026-09-08</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="When this engine release shipped.">engine release 8 September 2026</span></span></div>
+        <div class="ic-anchor-class">Affected: A modified lease where a later CPI review changes the first revised payment; A modified lease where a later change supersedes an earlier payment amount at the same contractual date</div>
+        <p class="ic-src-cite">Lease-change workbooks now follow later payment changes without losing the earlier audit trail.</p>
+        <p class="ic-no-run">A lease change can set a revised payment and a later CPI review or modification can validly change that payment again. The calculation kept the correct final cash, but the export check still expected the earlier amount to remain in the final schedule and could refuse the workbook.
+
+The calculation now preserves two separate facts. It records the exact payment used by each event's own present-value measurement, then records the final payment after all later events have been applied. The export requires the final liability schedule and payment journal to agree with that ordered result and accepts a difference only when the later event is present in the calculation evidence.
+
+The payment amounts, interest method and right-of-use measurement have not changed. This update allows a valid multi-event workbook to download while still refusing missing, altered or unexplained cash evidence.</p>
+      </div>
+      <div class="ic-anchor" id="changelog-e-75">
+        <div class="ic-anchor-head"><span class="ic-anchor-title">E-75 &middot; 2026-09-08</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="When this engine release shipped.">engine release 8 September 2026</span></span></div>
+        <div class="ic-anchor-class">Affected: A lease change whose entered first revised payment date is between contractual payment dates; A same-day tiered rent change whose later payment tier starts between contractual payment dates</div>
+        <p class="ic-src-cite">Lease-change workbooks now show the revised payment dates used by the contractual cash schedule.</p>
+        <p class="ic-no-run">When a first revised payment date was entered between regular payment dates, the calculation used the next contractual payment date but could record the entered date as though cash occurred there. A later row in a tiered rent change could do the same. The payment amounts, liability schedule and journals remained correct, but the workbook audit trail could show a different applied date.
+
+The calculator now keeps each entered date as supplied and separately records the first contractual payment date on which that row affects cash. The applied event, present-value table, liability schedule, payment journal and workbook must all agree. If saved evidence contradicts the generated cash schedule, the export stops and no workbook is downloaded.
+
+This changes the audit description, not the contractual payment amounts, interest method, right-of-use asset or modification measurement. Recalculate and replace a workbook if an off-cycle entered date is shown as the applied payment date.</p>
+      </div>
+      <div class="ic-anchor" id="changelog-e-74">
+        <div class="ic-anchor-head"><span class="ic-anchor-title">E-74 &middot; 2026-09-08</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="When this engine release shipped.">engine release 8 September 2026</span></span></div>
+        <div class="ic-anchor-class">Affected: A lease whose term is extended on the date an original contractual payment is due; A lease paid monthly, quarterly or annually, in arrears or in advance, whose term is extended without changing its payment terms</div>
+        <p class="ic-src-cite">Term extensions now keep every contractual payment due around the extension date.</p>
+        <p class="ic-no-run">When a lease was extended on the same date as its original final payment, two genuine payments could fall into one internal calendar position. In some cases, the original payment or the first payment for the added term was omitted. The smaller liability still unwound to zero, so a closing-balance check alone did not reveal the missing cash. This affected the liability schedule, payment journals and workbook.
+
+The calculator now keeps the original contractual payment once and continues the unchanged payment cadence through the added term. The checks compare every payment date and amount against an independent contract calendar across monthly, quarterly and annual leases, paid in arrears or in advance. They also confirm that the workbook liability and journal show the same complete cash flow.
+
+If you calculated a term extension that took effect on the original lease end date before this update, recalculate the lease and replace its workbook.</p>
       </div>
       <div class="ic-anchor" id="changelog-e-73">
         <div class="ic-anchor-head"><span class="ic-anchor-title">E-73 &middot; 2026-09-04</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="When this engine release shipped.">engine release 4 September 2026</span></span></div>
