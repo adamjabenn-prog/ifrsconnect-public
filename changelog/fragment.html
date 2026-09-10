@@ -1,11 +1,17 @@
-<!-- AUTO-GENERATED changelog fragment. Source registries: engine-changelog.json sha256 27736adaa7651ff9994b4064b7ef8fa5fc67f8c5ffb36346bb9f81c10b72ec32 | corrections-register.json sha256 a9b01e534d4ef414fac70a4abbcb3cc84877b43ab21bd3692804172a9320bed1 -->
-<div data-changelog-fragment data-generated-at="2026-09-09T00:00:00+08:00">
-<p class="ic-disclaimer" data-role="changelog-asat">This log was generated on 2026-09-09 from the verification registries. Release checks block a figure-affecting change that lacks an entry.</p>
+<!-- AUTO-GENERATED changelog fragment. Source registries: engine-changelog.json sha256 b767db26e524ec6f5e819e0606efccb988c91d6f4a08e4d8baca4013c842e112 | corrections-register.json sha256 6c4d2232f3a7129a3f63bcdab59baaf203d4a9d2e028834c36c2e1b3d4fcfbba -->
+<div data-changelog-fragment data-generated-at="2026-09-10T00:00:00+08:00">
+<p class="ic-disclaimer" data-role="changelog-asat">This log was generated on 2026-09-10 from the verification registries. Release checks block a figure-affecting change that lacks an entry.</p>
 
     <div class="ic-pub" id="engine-changelog">
       <div class="ic-pub-head">
         <div><h3>Engine changelog</h3><p>Figure-affecting engine changes, recorded at release</p></div>
-        <span class="ic-pub-count">81 entries</span>
+        <span class="ic-pub-count">82 entries</span>
+      </div>
+      <div class="ic-anchor" id="changelog-e-82">
+        <div class="ic-anchor-head"><span class="ic-anchor-title">E-82 &middot; 2026-09-10</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="When this engine release shipped.">engine release 10 September 2026</span></span></div>
+        <div class="ic-anchor-class">No user-visible figure changes</div>
+        <p class="ic-src-cite">Paid calculations retain the lease name entered by the user.</p>
+        <p class="ic-no-run">When a paid user's lease matched a published worked example, the calculation could replace the entered name with the example title. The user's own calculation now keeps its name. Public sample downloads still use anonymous example titles. No contractual payment, interest, depreciation, carrying balance or journal amount changes.</p>
       </div>
       <div class="ic-anchor" id="changelog-e-81">
         <div class="ic-anchor-head"><span class="ic-anchor-title">E-81 &middot; 2026-09-09</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="When this engine release shipped.">engine release 9 September 2026</span></span></div>
@@ -787,7 +793,14 @@ References: IFRS 16 paragraph 36, a lease liability is carried at amortised cost
     <div class="ic-pub" id="corrections-register">
       <div class="ic-pub-head">
         <div><h3>Corrections register</h3><p>Input-reading and display fixes that did not change the engine</p></div>
-        <span class="ic-pub-count">40 entries</span>
+        <span class="ic-pub-count">41 entries</span>
+      </div>
+      <div class="ic-anchor" id="correction-c-41">
+        <div class="ic-anchor-head"><span class="ic-anchor-title">C-41 &middot; 2026-09-10</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="This fix changed input reading or display only; the calculation engine and every saved schedule computed from identical inputs are unchanged.">no engine change</span></span></div>
+        <div class="ic-anchor-class">Where: The index-review check in the Excel audit pack; The reconciliation of an early-exit reassessment and its termination penalty</div>
+        <p class="ic-src-cite">An earlier workbook could compare an index adjustment measured over the original term with a termination penalty introduced by a later reassessment. That mixed two measurement bases and could report a failed check although the final lease amounts agreed with an independent calculation. The workbook now checks the original index event and the revised contractual cash separately, including the timing of fixed amounts and incentives. Missing or invalid evidence still fails the check. No contractual cash, interest, depreciation, carrying balance or dated journal amount changes.</p>
+        <p class="ic-no-run"><strong>Affected input shape:</strong> A lease whose early-exit reassessment absorbs a later index review, including a review on the same entered date as the reassessment, with payments in advance or arrears and a separately stated penalty, residual value guarantee or deferred incentive. <strong>Window:</strong> The exact start date is not known. This correction is prepared locally and has not yet been verified on the live calculator.</p>
+        <p class="ic-no-run"><strong>What to check:</strong> After the corrected exporter is live, export again if this combination produced a failed index-review check in an earlier workbook. This correction alone does not require an accounting adjustment. Investigate any remaining failed check before relying on that workbook.</p>
       </div>
       <div class="ic-anchor" id="correction-c-40">
         <div class="ic-anchor-head"><span class="ic-anchor-title">C-40 &middot; 2026-09-09</span><span class="ic-anchor-actions"><span class="ic-fig-prec" title="This fix changed input reading or display only; the calculation engine and every saved schedule computed from identical inputs are unchanged.">no engine change</span></span></div>
